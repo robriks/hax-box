@@ -7,7 +7,7 @@ export default function Footer() {
     return (
         <div className='justify-center h-auto w-auto'>
             <div className='flex justify-center mt-2'>
-                <div className='p-4'>
+                <div className='p-4'> 
                     <a
                         href='https://github.com/robriks/HuskyCoin'>
                         <Image
