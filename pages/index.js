@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Markus's Personal Page</title>
+        <title>Markus&apos;s Personal Page</title>
       </Head>
 
       <div className="flex justify-center">

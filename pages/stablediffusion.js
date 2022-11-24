@@ -77,7 +77,7 @@ export default function StableDiffusion() {
             <p className="flex justify-center m-2 text-sm text-black">
                 Lost? Try this to start:
             </p>
-            <p className="flex justify-center text-sm text-gray-600">"Portrait of faerie queen, intricate, elegant, highly detailed, digital painting, artstation, concept art, smooth, sharp focus, illustration, 8k"</p>
+            <p className="flex justify-center text-sm text-gray-600">&quot;Portrait of faerie queen, intricate, elegant, highly detailed, digital painting, artstation, concept art, smooth, sharp focus, illustration, 8k&quot;</p>
 
             <div className="flex justify-center m-8">
                 <p className="text-xs text-gray-400">
