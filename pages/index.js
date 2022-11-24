@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -18,7 +19,9 @@ export default function Home() {
       <div className="flex justify-center">
         <p>list of projects</p>
       </div>
-      <a className="text-blue-500" href='/stablediffusion'>Generate images from text using AI!</a>
+      <Link href='/stablediffusion'>
+        <a className="text-blue-500">Generate images from text using AI!</a>
+      </Link>
 
     </div >
   );
