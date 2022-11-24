@@ -6,11 +6,12 @@ export default async function handler(req, res) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      // Pinned to a specific version of kuprel/min-dalle, fetched from:
-      // https://replicate.com/kuprel/min-dalle/versions
+      // Pinned to a specific version of prompthero/openjourney, fetched from:
+      // https://replicate.com/prompthero/openjourney/versions
+      // !! I like this model but may change this in the future to support even cooler stable-diffusion v2 models
       version:
-        "2af375da21c5b824a84e1c459f45b69a117ec8649c2aa974112d7cf1840fc0ce",
-      input: { text: req.body.prompt, grid_size: 1 },
+        "9936c2001faa2194a261c01381f90e65261879985476014a0a37a334593a05eb",
+      input: req.body,
     }),
   });
 
