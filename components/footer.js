@@ -6,13 +6,12 @@ import instagramLogo from '../public/instagram-logo.png';
 export default function Footer() {
     return (
         <div className='justify-center h-auto w-auto'>
-            <div className="flex justify-center m-8">
+            {/* <div className="flex justify-center m-8">
                 <p className="text-xs text-gray-400">
                     Credit for this Stable Diffusion + MidJourney v4 model goes to{' '}
                     <a className="text-blue-500" href="https://replicate.com/prompthero/openjourney">prompthero/openjourney</a>
                 </p>
-                {/* move 'credit for this' to footer.js */}
-            </div>
+            </div> */}
             <div className='flex justify-center text-xs font-bold'>Contact:</div>
 
             <div className='flex justify-center'>

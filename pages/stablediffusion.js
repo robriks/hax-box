@@ -50,8 +50,7 @@ export default function StableDiffusion() {
                 <title>AI Text To Image</title>
             </Head>
 
-            <h1 className="flex place-content-center text-3xl font-bold mt-8 mb-8">Generate images from text using AI</h1>
-            {/* move to the top so order is generate then greyfilled search form then ( suceeded ) then image */}
+            <h1 className="flex place-content-center text-3xl font-bold mt-8 mb-6">Generate images from text using AI</h1>
             <form className="flex justify-center" onSubmit={handleSubmit}>
                 <div className="flex justify-center">
                     <input className="rounded-xl" type="text" name="prompt" placeholder="Enter your prompt here" />
@@ -80,8 +79,10 @@ export default function StableDiffusion() {
                 Lost? Try this to start:
             </p>
             <p className="flex justify-center text-sm text-gray-600">&quot;Portrait of faerie queen, intricate, elegant, highly detailed, digital painting, artstation, concept art, smooth, sharp focus, illustration, 8k&quot;</p>
-
-            
+            <p className="text-xs ml-6 mr-6 mt-20 text-gray-400">
+                    Credit for this Stable Diffusion + MidJourney v4 model goes to{' '}
+                    <a className="text-blue-500" href="https://replicate.com/prompthero/openjourney">prompthero/openjourney</a>
+            </p>
         </div>
     );
 }
