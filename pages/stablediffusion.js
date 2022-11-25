@@ -50,6 +50,16 @@ export default function StableDiffusion() {
                 <title>AI Text To Image</title>
             </Head>
 
+            <h1 className="flex place-content-center text-3xl font-bold mt-8 mb-8">Generate images from text using AI</h1>
+            {/* move to the top so order is generate then greyfilled search form then ( suceeded ) then image */}
+            <form className="flex justify-center" onSubmit={handleSubmit}>
+                <div className="flex justify-center">
+                    <input className="rounded-xl" type="text" name="prompt" placeholder="Enter your prompt here" />
+                    <button className="ml-4 rounded-xl bg-purple-600 hover:bg-purple-800 shadow-xl text-white text-md" type="submit">Create!</button>
+                </div>
+            </form>
+            <p className="flex justify-center m-4 text-gray-400 text-xs"> {prediction ? '( ' + prediction.status + ' )' : ''} </p>
+
             {prediction && (
                 <div className="flex justify-center">
                     {prediction.output && (
@@ -65,26 +75,13 @@ export default function StableDiffusion() {
 
             {error && <div>{error}</div>}
 
-            <p className="flex place-content-center text-sm font-bold mt-8 mb-2">Generate images from text using AI:</p>
-            <form className="flex justify-center" onSubmit={handleSubmit}>
-                <div className="flex justify-center">
-                    <input className="rounded-xl" type="text" name="prompt" />
-                    <button className="ml-4 rounded-xl bg-purple-600 hover:bg-purple-800 shadow-xl text-white text-md" type="submit">Create!</button>
-                </div>
-            </form>
-            <p className="flex justify-center m-4 text-gray-400 text-xs"> {prediction ? '( ' + prediction.status + ' )' : ''} </p>
-
+            
             <p className="flex justify-center m-2 text-sm text-black">
                 Lost? Try this to start:
             </p>
             <p className="flex justify-center text-sm text-gray-600">&quot;Portrait of faerie queen, intricate, elegant, highly detailed, digital painting, artstation, concept art, smooth, sharp focus, illustration, 8k&quot;</p>
 
-            <div className="flex justify-center m-8">
-                <p className="text-xs text-gray-400">
-                    Credit for this Stable Diffusion + MidJourney v4 model goes to{' '}
-                    <a className="text-blue-500" href="https://replicate.com/prompthero/openjourney">prompthero/openjourney</a>
-                </p>
-            </div>
+            
         </div>
     );
 }
