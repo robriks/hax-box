@@ -78,10 +78,10 @@ export default function StableDiffusion() {
             <p className="flex justify-center m-2 text-sm text-black">
                 Lost? Try this to start:
             </p>
-            <p className="flex justify-center text-sm text-gray-600">&quot;Portrait of faerie queen, intricate, elegant, highly detailed, digital painting, artstation, concept art, smooth, sharp focus, illustration, 8k&quot;</p>
-            <p className="text-xs ml-6 mr-6 mt-20 text-gray-400">
+            <p className="flex place-content-center text-sm text-gray-600">&quot;Portrait of faerie queen, intricate, elegant, highly detailed, digital painting, artstation, concept art, smooth, sharp focus, illustration, 8k&quot;</p>
+            <p className="flex place-content-center text-xs ml-6 mr-6 mt-20 text-gray-400">
                     Credit for this Stable Diffusion + MidJourney v4 model goes to{' '}
-                    <a className="text-blue-500" href="https://replicate.com/prompthero/openjourney">prompthero/openjourney</a>
+                    <a className="text-blue-500" href="https://replicate.com/prompthero/openjourney">&nbsp;prompthero/openjourney</a>
             </p>
         </div>
     );

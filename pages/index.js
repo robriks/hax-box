@@ -14,11 +14,16 @@ export default function Home() {
       </Head>
 
       <div className="flex justify-center items-center">
-        <Image src={gm} height='512' width='512' alt='gif of KweenBirb saying gm' className='flex rounded-3xl' />
-        <div className='w-3/4 p-4 items-stretch'>
-          <p className='text-xs font-bold'>
-            GM! Welcome to my personal page, where you&apos;ll find my metaversal footprint in its entirety.
-          </p>
+        <Image src={gm} alt='gif of KweenBirb saying gm' className='flex rounded-3xl' />
+        <div className='max-w-xs sm:max-w-sm p-6 mx-auto ml-2 rounded-full shadow-xl bg-gray-100'>
+          <h1 className='text-sm text-center italic font-bold leading-normal'>
+            ~ GM! ~
+          </h1>
+          <h2 className='text-xs text-center italic font-bold leading-normal'>
+            Welcome to my personal page, where you&apos;ll find my metaversal footprint in its entirety:
+            from blockchain and AI to orchestral music!
+          </h2>
+          <p className='text-center text-sm pt-2 text-gray-400'>- Markus Osterlund</p>
         </div>
       </div>
       <div className='flex justify-center mt-8'>
