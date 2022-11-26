@@ -17,17 +17,17 @@ export default function Home() {
         <Image src={gm} height='512' width='512' alt='gif of KweenBirb saying gm' className='flex rounded-3xl' />
         <div className='w-3/4 p-4 items-stretch'>
           <p className='text-xs font-bold'>
-            GM! Welcome to my personal page, where you'll find my metaversal footprint in its entirety.
+            GM! Welcome to my personal page, where you&apos;ll find my metaversal footprint in its entirety.
           </p>
         </div>
       </div>
       <div className='flex justify-center mt-8'>
         <Link href='/stablediffusion'>
-          <a className="text-md text-blue-500">While you're here, try playing around with text to image AI!</a>
+          <a className="text-md text-blue-500">While you&apos;re here, try playing around with text to image AI!</a>
         </Link>
       </div>
       <div className="flex justify-center">
-        <p className='mt-8'>Here's a few of my other projects:</p>
+        <p className='mt-8'>Here&apos;s a few of my other projects:</p>
       </div>
       <div className='mt-4'>
       <li className='text-sm mb-2'>
