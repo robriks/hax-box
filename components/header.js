@@ -8,10 +8,10 @@ export default function Header() {
             <header className='bg-header'>
                 <nav className='p-6 mx-auto justify-between max-w-screen-xl'>
                     <div className='flow-root ml-4 mt-2'>
-                        <div className='flex justify-center place-content-center'>
+                        <div className='flex justify-center place-content-center rounded-full drop-shadow-2xl'>
                             <Link href='/'>
                                 <a className='max-w-md'>
-                                    <Image src={BirbBanner} className='rounded-full' alt=''></Image>
+                                    <Image src={BirbBanner} className='rounded-full' alt='KweenBirb header banner'></Image>
                                 </a>
                             </Link>
                         </div>
@@ -25,17 +25,17 @@ export default function Header() {
               <Link href="/">
                 <a className="nav-link text-blue-700">Home</a>
               </Link>
-              <Link href='/faucet'>
-                <a className='nav-link text-blue-700'>Faucet</a>
+              <Link href='/'>
+                <a className='nav-link text-blue-700'>About</a>
               </Link>
-              <Link href='/stake'>
-                <a className='nav-link text-blue-700'>Staking</a>
+              <Link href='/'>
+                <a className='nav-link text-blue-700'>Blog</a>
               </Link>
-              <Link href='/about'>
-                <a className='nav-link text-blue-700'>Web3</a>
+              <Link href='/'>
+                <a className='nav-link text-blue-700'>Custom NFTs</a>
               </Link>
-              <Link href='/tutorial'>
-                <a className='nav-link text-blue-700'>Tutorial</a>
+              <Link href='/stablediffusion'>
+                <a className='nav-link text-blue-700'>AI</a>
               </Link>
             </div>
           </div>

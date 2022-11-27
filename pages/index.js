@@ -13,17 +13,22 @@ export default function Home() {
         <title>Markus&apos;s Personal Page</title>
       </Head>
 
-      <div className="flex justify-center items-center">
-        <Image src={gm} alt='gif of KweenBirb saying gm' className='flex rounded-3xl' />
-        <div className='max-w-xs sm:max-w-sm p-6 mx-auto ml-2 rounded-full shadow-xl bg-gray-100'>
-          <h1 className='text-sm text-center italic font-bold leading-normal'>
+      <div className="flex items-center justify-center">
+        <div className='hover:scale-125 max-w-xs sm:p-12 drop-shadow-2xl'>
+          <a href='https://twitter.com/marsterlund'>
+            <Image src={gm} alt='gif of KweenBirb saying gm' height='512' width='512' className='flex rounded-3xl' />
+          </a>
+        </div>
+        <div className='max-w-xs p-6 ml-2 rounded-full shadow-xl bg-violet-100'>
+          <h1 className='text-[10px] text-center italic font-bold leading-normal'>
             ~ GM! ~
           </h1>
-          <h2 className='text-xs text-center italic font-bold leading-normal'>
+          <h2 className='text-[10px] text-center italic font-bold leading-normal'>
             Welcome to my personal page, where you&apos;ll find my metaversal footprint in its entirety:
             from blockchain and AI to orchestral music!
           </h2>
-          <p className='text-center text-sm pt-2 text-gray-400'>- Markus Osterlund</p>
+          <p className='text-center text-sm pt-2 text-gray-400'>- Markus Osterlund </p>
+          <p className='text-center text-sm '> 📯📯 </p>
         </div>
       </div>
       <div className='flex justify-center mt-8'>
