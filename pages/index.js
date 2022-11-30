@@ -14,14 +14,20 @@ export default function Home() {
       </Head>
 
 
-      <section className=" text-black">
+      <section className="text-black">
         <div className="mx-auto max-w-screen-xl px-4 lg:flex">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="bg-gradient-to-r from-sky-400 via-indigo-400 to-purple-800 bg-clip-text text-2xl font-extrabold text-transparent sm:text-3xl">
+            <h1 className="bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-800 bg-clip-text text-2xl font-bold text-transparent mb-3 sm:text-3xl">
               From Classical Music To Blockchain:
             </h1>
-            <h2 className="bg-gradient-to-r from-sky-400 via-indigo-400 to-purple-800 bg-clip-text text-5xl font-extrabold text-transparent sm:text-6xl">
-              Horn and Technology
+            <h2 className="bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-800 bg-clip-text text-5xl font-extrabold text-transparent sm:text-6xl">
+              Horn
+            </h2>
+            <h2 className="bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-800 bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl">
+              and
+            </h2>
+            <h2 className="bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-800 bg-clip-text text-5xl font-extrabold text-transparent sm:text-6xl">
+              Technology
             </h2>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link href='/about'>

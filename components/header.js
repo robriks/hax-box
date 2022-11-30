@@ -19,7 +19,7 @@ export default function Header() {
         </nav>
       </header>
       <div className='flex justify-center w-auto'>
-        <div className='bg-gradient-to-r from-sky-300 via-indigo-400 to-purple-900 p-4 sm:p-6 shadow-2xl rounded-full'>
+        <div className='bg-gradient-to-r from-cyan-300 via-indigo-400 to-purple-900 p-4 sm:p-6 shadow-2xl rounded-full'>
           <div className='flex justify-items-stretch sm:text-2xl space-x-6 sm:space-x-10 w-auto text-white font-bold'>
             <Link href="/">
               <a className="nav-link hover:underline">Home</a>
