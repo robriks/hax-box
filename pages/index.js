@@ -24,19 +24,16 @@ export default function Home() {
               Horn and Technology
             </h2>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <a
-                className="block w-full rounded-full border border-indigo-400 px-12 py-3 text-sm font-semibold text-white hover:bg-indigo-700 bg-indigo-400 hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto shadow-xl"
-                href="/about"
-              >
-                About Me
-              </a>
-
-              <a
-                className="block w-full rounded-full border border-indigo-400 px-12 py-3 text-sm font-semibold text-white hover:bg-indigo-700 bg-indigo-400 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto shadow-xl"
-                href="/stablediffusion"
-              >
-                Try txt2img AI
-              </a>
+              <Link href='/about'>
+                <a className="block w-full rounded-full border border-indigo-400 px-12 py-3 text-sm font-semibold text-white hover:bg-indigo-700 bg-indigo-400 hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto shadow-xl">
+                  About Me
+                </a>
+              </Link>
+              <Link href='/stablediffusion'>
+                <a className="block w-full rounded-full border border-indigo-400 px-12 py-3 text-sm font-semibold text-white hover:bg-indigo-700 bg-indigo-400 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto shadow-xl">
+                  Try txt2img AI
+                </a>
+              </Link>
             </div>
           </div>
         </div>
