@@ -6,7 +6,10 @@ import instagramLogo from '../public/instagram-logo.png';
 export default function Footer() {
     return (
         <div className='justify-center h-auto w-auto'>
-            <div className='flex justify-center text-xs font-bold'>Contact:</div>
+            <div className='justify-center text-xs'>
+                <h2 className='text-center mb-2'>Copyright © 2022 Osterlund Dapp Solutions</h2>
+                <h2 className='text-center font-bold'>Contact:</h2>
+            </div>
 
             <div className='flex justify-center'>
                 <div className='p-4'> 
