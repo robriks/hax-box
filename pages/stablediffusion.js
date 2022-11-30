@@ -107,7 +107,7 @@ export default function StableDiffusion() {
                         width={150}
                         height={150}
                     />
-                    <p className="place-self-center">&nbsp;- >&nbsp;</p>
+                    <p className="place-self-center">&nbsp;- &gt;&nbsp;</p>
                     <Image
                         src={cleric}
                         alt="Portrait input image"
@@ -128,7 +128,7 @@ export default function StableDiffusion() {
                         width={150}
                         height={150}
                     />
-                    <p className="place-self-center">&nbsp;- >&nbsp;</p>
+                    <p className="place-self-center">&nbsp;- &gt;&nbsp;</p>
                     <Image
                         src={mage}
                         alt="Portrait input image"
