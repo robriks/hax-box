@@ -104,42 +104,42 @@ export default function StableDiffusion() {
                     <Image
                         src={markusinput}
                         alt="Portrait input image"
-                        width={150}
-                        height={150}
+                        width={200}
+                        height={200}
                     />
-                    <p className="place-self-center">&nbsp;- &gt;&nbsp;</p>
+                    <p className="place-self-center">&nbsp;--&gt;&nbsp;</p>
                     <Image
                         src={cleric}
                         alt="Portrait input image"
-                        width={150}
-                        height={150}
+                        width={200}
+                        height={200}
                     />
                     <Image
                         src={warrior}
                         alt="Portrait input image"
-                        width={150}
-                        height={150}
+                        width={200}
+                        height={200}
                     />
                 </div>
                 <div className="flex place-content-center">
                     <Image
                         src={caseyinput}
                         alt="Portrait input image"
-                        width={150}
-                        height={150}
+                        width={200}
+                        height={200}
                     />
-                    <p className="place-self-center">&nbsp;- &gt;&nbsp;</p>
+                    <p className="place-self-center">&nbsp;--&gt;&nbsp;</p>
                     <Image
                         src={mage}
                         alt="Portrait input image"
-                        width={150}
-                        height={150}
+                        width={200}
+                        height={200}
                     />
                     <Image
                         src={casey}
                         alt="Portrait input image"
-                        width={150}
-                        height={150}
+                        width={200}
+                        height={200}
                     />
                 </div>
             </div>

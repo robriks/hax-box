@@ -20,13 +20,13 @@ export default function Home() {
             <h1 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text text-xl font-semibold text-transparent mb-3 sm:text-3xl">
               From Classical Music To Blockchain:
             </h1>
-            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text text-[40px] font-extrabold text-transparent sm:text-6xl">
+            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text text-[42px] font-extrabold text-transparent sm:text-6xl">
               Horn
             </h2>
             <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text text-[30px] font-extrabold text-transparent sm:text-5xl">
               and
             </h2>
-            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text text-[40px] font-extrabold text-transparent sm:text-6xl">
+            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text text-[42px] font-extrabold text-transparent sm:text-6xl">
               Technology
             </h2>
             <div className="mt-8 flex flex-wrap justify-center gap-4 px-8">
@@ -53,7 +53,7 @@ export default function Home() {
         <div className='hover:scale-110 max-w-sm max-h-sm p-6 py-2 rounded-full shadow-2xl bg-gradient-to-r from-violet-300 via-blue-300 to-indigo-400'>
           <Link href='/about'>
             <a className="rounded-full">
-              <h2 className='text-sm text-center italic font-bold leading-normal mb-2'>
+              <h2 className='text-sm text-center italic font-bold leading-normal mb-2 mt-2'>
                 ~ GM! ~
               </h2>
               <h2 className='text-[10px] text-center italic font-bold leading-normal'>
@@ -105,7 +105,7 @@ export default function Home() {
         </li>
         <li className='text-sm mb-2'>
           <Link href='https://mirror.xyz/0x65b54a4646369d8ad83cb58a5a6b39f22fcd8cee'>
-            <a className='text-sm text-blue-500 hover:underline'> Blog entries on Web3 events and Solidity security vulnerabilities </a>
+            <a className='text-sm text-blue-500 hover:underline'> Blog entries on Web3 events and Solidity security vulnerabilities, hosted on-chain on Ethereum! </a>
           </Link>
         </li>
         <li className='text-sm mb-2'>
