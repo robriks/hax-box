@@ -17,26 +17,26 @@ export default function Home() {
       <section className="text-black">
         <div className="mx-auto max-w-screen-xl lg:flex">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-800 bg-clip-text text-2xl font-bold text-transparent mb-3 sm:text-3xl">
+            <h1 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text text-xl font-semibold text-transparent mb-3 sm:text-3xl">
               From Classical Music To Blockchain:
             </h1>
-            <h2 className="bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-800 bg-clip-text text-5xl font-extrabold text-transparent sm:text-6xl">
+            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text text-[40px] font-extrabold text-transparent sm:text-6xl">
               Horn
             </h2>
-            <h2 className="bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-800 bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl">
+            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text text-[30px] font-extrabold text-transparent sm:text-5xl">
               and
             </h2>
-            <h2 className="bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-800 bg-clip-text text-5xl font-extrabold text-transparent sm:text-6xl">
+            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text text-[40px] font-extrabold text-transparent sm:text-6xl">
               Technology
             </h2>
             <div className="mt-8 flex flex-wrap justify-center gap-4 px-8">
               <Link href='/about'>
-                <a className="hover:underline block w-full max-w-xs rounded-full border border-indigo-400 px-12 py-3 text-sm font-semibold text-white hover:bg-indigo-700 bg-indigo-400 hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto shadow-xl">
+                <a className="hover:underline block w-auto rounded-full border border-indigo-400 px-12 py-3 text-sm font-semibold text-white hover:bg-indigo-700 bg-indigo-400 hover:text-white focus:outline-none focus:ring active:text-opacity-75 shadow-xl">
                   About Me
                 </a>
               </Link>
               <Link href='/stablediffusion'>
-                <a className="hover:underline block w-full max-w-xs rounded-full border border-indigo-400 px-12 py-3 text-sm font-semibold text-white hover:bg-indigo-700 bg-indigo-400 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto shadow-xl">
+                <a className="hover:underline block w-auto max-w-xs rounded-full border border-indigo-400 px-12 py-3 text-sm font-semibold text-white hover:bg-indigo-700 bg-indigo-400 focus:outline-none focus:ring active:bg-blue-500 shadow-xl">
                   Explore!
                 </a>
               </Link>
