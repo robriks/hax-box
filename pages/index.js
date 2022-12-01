@@ -51,17 +51,19 @@ export default function Home() {
           </a>
         </div>
         <div className='hover:scale-110 max-w-sm max-h-sm p-6 py-2 rounded-full shadow-2xl bg-gradient-to-r from-violet-300 via-blue-300 to-indigo-400'>
-          <a href='/about' className="rounded-full">
-            <h2 className='text-sm text-center italic font-bold leading-normal mb-2'>
-              ~ GM! ~
-            </h2>
-            <h2 className='text-[10px] text-center italic font-bold leading-normal'>
-              Welcome to my personal page, where you&apos;ll find my metaversal footprint in its entirety:
-              from blockchain and AI to orchestral music!
-            </h2>
-            <p className='text-center pt-2 text-sm text-white font-bold'>- Markus Osterlund </p>
-            <p className='text-center text-sm font-extrabold'> 📯📯 </p>
-          </a>
+          <Link href='/about'>
+            <a className="rounded-full">
+              <h2 className='text-sm text-center italic font-bold leading-normal mb-2'>
+                ~ GM! ~
+              </h2>
+              <h2 className='text-[10px] text-center italic font-bold leading-normal'>
+                Welcome to my personal page, where you&apos;ll find my metaversal footprint in its entirety:
+                from blockchain and AI to orchestral music!
+              </h2>
+              <p className='text-center pt-2 text-sm text-white font-bold'>- Markus Osterlund </p>
+              <p className='text-center text-sm font-extrabold'> 📯📯 </p>
+            </a>
+          </Link>
         </div>
       </div >
       <div className='justify-center mt-12'>
