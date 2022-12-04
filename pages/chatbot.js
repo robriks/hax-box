@@ -111,7 +111,7 @@ const Chatbot = () => {
                         }
                     </div>
                     <div className='mt-8'>
-                        <p className='mr-10 sm:mx-20 text-right text-xs text-gray-400'>Suggestion: 'Tell me a story!'</p>
+                        <p className='mr-10 sm:mx-20 text-right text-xs text-gray-400'>Suggestion: &apos;Tell me a story!&apos;</p>
                         <div className='flex place-content-end'>
                             <h1 className='place-self-center float-left mr-6 text-4xl sm:mr-12 sm:text-5xl'>🤖</h1>
                             <form onSubmit={handleSubmit(onSubmit)} className="place-self-end mt-2 rounded-full">
