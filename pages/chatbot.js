@@ -13,7 +13,7 @@ const Chatbot = () => {
     const onSubmit = async (data) => {
 
         const api_key = process.env.OPENAI_API_TOKEN;
-        // set loading state to initialized
+        // set loading state to true to initialize
         setLoading(true);
 
         // make the post request
