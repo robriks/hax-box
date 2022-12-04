@@ -56,7 +56,7 @@ export default function Home() {
               <h2 className='text-sm text-center italic font-bold leading-normal mb-2 mt-2'>
                 ~ GM! ~
               </h2>
-              <h2 className='text-[10px] text-center italic font-bold leading-normal'>
+              <h2 className='text-sm text-center italic  leading-normal'>
                 Welcome to my personal page, where you&apos;ll find my metaversal footprint in its entirety:
                 from blockchain and AI to orchestral music!
               </h2>

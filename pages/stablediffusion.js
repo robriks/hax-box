@@ -8,7 +8,6 @@ import casey from "../public/casey.png";
 import mage from "../public/mage.png";
 import cleric from "../public/cleric.png";
 import warrior from "../public/warrior.png";
-import arrow from "../public/arrow.png";
 
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -95,7 +94,7 @@ export default function StableDiffusion() {
                 Example:
             </p>
             <p className="flex place-content-center text-[10px] text-gray-600">&quot;Portrait of faerie queen, intricate, elegant, highly detailed, digital painting, artstation, concept art, smooth, sharp focus, illustration, 8k&quot;</p>
-            <div className="justify-center text-center p-8">
+            <div className="justify-center text-center p-6">
                 <h2 className="text-sm font-bold mb-2">
                     Coming Soon:
                 </h2>
@@ -104,42 +103,42 @@ export default function StableDiffusion() {
                     <Image
                         src={markusinput}
                         alt="Portrait input image"
-                        width={200}
-                        height={200}
+                        width={150}
+                        height={150}
                     />
                     <p className="place-self-center">&nbsp;--&gt;&nbsp;</p>
                     <Image
                         src={cleric}
                         alt="Portrait input image"
-                        width={200}
-                        height={200}
+                        width={150}
+                        height={150}
                     />
                     <Image
                         src={warrior}
                         alt="Portrait input image"
-                        width={200}
-                        height={200}
+                        width={150}
+                        height={150}
                     />
                 </div>
                 <div className="flex place-content-center">
                     <Image
                         src={caseyinput}
                         alt="Portrait input image"
-                        width={200}
-                        height={200}
+                        width={150}
+                        height={150}
                     />
                     <p className="place-self-center">&nbsp;--&gt;&nbsp;</p>
                     <Image
                         src={mage}
                         alt="Portrait input image"
-                        width={200}
-                        height={200}
+                        width={150}
+                        height={150}
                     />
                     <Image
                         src={casey}
                         alt="Portrait input image"
-                        width={200}
-                        height={200}
+                        width={150}
+                        height={150}
                     />
                 </div>
             </div>
