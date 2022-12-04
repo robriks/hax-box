@@ -12,7 +12,7 @@ const Chatbot = () => {
 
     const onSubmit = async (data) => {
 
-        const api_key = process.env.OPENAI_API_TOKEN
+        const OPENAI_API_TOKEN = process.env.OPENAI_API_TOKEN;
         // set loading state to true to initialize
         setLoading(true);
 
@@ -27,7 +27,7 @@ const Chatbot = () => {
             },
             {
                 headers: {
-                    'Authorization': `Bearer ${api_key}`
+                    'Authorization': `Bearer ${OPENAI_API_TOKEN}`
                 }
             }
         ).then((res) => {
