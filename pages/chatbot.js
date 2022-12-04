@@ -53,7 +53,7 @@ const Chatbot = () => {
                 </Head>
 
                 <div className='max-w-screen-md text-sm sm:text-lg'>
-                    <h1 className="place-content-center mb-14 sm:mb-20 text-center text-3xl sm:text-5xl font-bold mt-2 mb-5 bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text font-semibold text-transparent">
+                    <h1 className="place-content-center mb-14 sm:mb-20 text-center text-3xl sm:text-5xl font-bold mt-2 mb-5 bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text text-transparent">
                         Communicate with an Artificial Intelligence
                     </h1>
                     <div className='space-y-4'>

@@ -56,7 +56,7 @@ export default function StableDiffusion() {
                 <title>Text To Image AI</title>
             </Head>
 
-            <h1 className="flex place-content-center text-center text-3xl sm:text-5xl font-bold mt-2 mb-5 bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text font-semibold text-transparent">
+            <h1 className="flex place-content-center text-center text-3xl sm:text-5xl font-bold mt-2 mb-5 bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text text-transparent">
                 Generate images from text using AI
             </h1>
             <div className="flex place-content-center text-center pr-6 pl-6 mb-4">
