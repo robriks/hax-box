@@ -38,7 +38,7 @@ const Chatbot = () => {
             setActive(msgs);
             setConversation([...conversation, msgs]);
             setHistory(conversation);
-            // Reset loading state to false after request
+            // Reset loading state to false after request to clear animation
             setLoading(false);
         })
     };
