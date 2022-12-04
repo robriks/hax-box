@@ -5,9 +5,9 @@ const nextConfig = {
   images: {
     domains: ["replicate.com", "replicate.delivery"],
   },
-  env: {
-    api_key: `${process.env.OPENAI_API_TOKEN}`
-  }
+  // env: {
+  //   api_key: `${process.env.OPENAI_API_TOKEN}`
+  // }
 };
 
 module.exports = nextConfig;
