@@ -56,7 +56,7 @@ export default function StableDiffusion() {
                 <title>Text To Image AI</title>
             </Head>
 
-            <h1 className="flex place-content-center text-center text-3xl font-bold mt-2 mb-5">
+            <h1 className="flex place-content-center text-center text-3xl sm:text-5xl font-bold mt-2 mb-5 bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text font-semibold text-transparent">
                 Generate images from text using AI
             </h1>
             <div className="flex place-content-center text-center pr-6 pl-6 mb-4">
@@ -67,8 +67,12 @@ export default function StableDiffusion() {
             </div>
             <form className="flex justify-center" onSubmit={handleSubmit}>
                 <div className="flex justify-center">
-                    <input className="rounded-xl" type="text" name="prompt" placeholder="Enter your prompt here" />
-                    <button className="ml-4 rounded-xl bg-gradient-to-r from-sky-300 via-indigo-400 to-purple-700 shadow-xl text-white p-2 hover:from-sky-500 hover:via-indigo-600 hover:to-purple-900" type="submit">
+                    <input
+                        className="px-3 rounded-full text-right border-2 border-violet-200 focus:border-none focus:outline-none focus:outline-[5px] focus:outline-violet-400 focus:animate-pulse hover:outline hover:outline-4 hover:outline-violet-200 shadow-xl"
+                        type="text"
+                        name="prompt"
+                        placeholder="Enter your prompt here" />
+                    <button className="ml-4 rounded-full bg-gradient-to-r from-sky-300 via-indigo-400 to-purple-700 shadow-xl text-white p-2 border-2 border-violet-300 hover:outline hover:outline-4 hover:outline-violet-200 hover:animate-bounce hover:from-sky-500 hover:via-indigo-600 hover:to-purple-900" type="submit">
                         Create!
                     </button>
                 </div>
@@ -91,7 +95,7 @@ export default function StableDiffusion() {
             {error && <div>{error}</div>}
 
             <p className="flex justify-center m-1 text-xs text-black">
-                Example:
+                For example:
             </p>
             <p className="flex place-content-center text-[10px] text-gray-600">&quot;Portrait of faerie queen, intricate, elegant, highly detailed, digital painting, artstation, concept art, smooth, sharp focus, illustration, 8k&quot;</p>
             <div className="justify-center text-center p-6">
@@ -106,7 +110,7 @@ export default function StableDiffusion() {
                         width={150}
                         height={150}
                     />
-                    <p className="place-self-center">&nbsp;--&gt;&nbsp;</p>
+                    <p className="place-self-center whitespace-nowrap">&nbsp;--&gt;&nbsp;</p>
                     <Image
                         src={cleric}
                         alt="Portrait input image"
@@ -127,7 +131,7 @@ export default function StableDiffusion() {
                         width={150}
                         height={150}
                     />
-                    <p className="place-self-center">&nbsp;--&gt;&nbsp;</p>
+                    <p className="place-self-center whitespace-nowrap">&nbsp;--&gt;&nbsp;</p>
                     <Image
                         src={mage}
                         alt="Portrait input image"

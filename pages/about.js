@@ -10,7 +10,9 @@ export default function NFT() {
         <div className={styles.container}>
             <div className="flex items-center justify-center">
                 Coming soon!
-                {/* -blockchain dev cert
+                {/* 
+                -portrait NFTs
+                -blockchain dev cert
                 -cryptocurrency forensics
                 -dapp development
                 -governance smart contracts

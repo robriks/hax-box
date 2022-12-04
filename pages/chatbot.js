@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import styles from "../styles/Home.module.css";
-import { data } from 'autoprefixer';
+import Head from "next/head";
 
 const Chatbot = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -48,7 +48,14 @@ const Chatbot = () => {
     return (
         <div className={styles.container}>
             <div className='flex justify-center'>
+                <Head>
+                    <title>Text To Image AI</title>
+                </Head>
+
                 <div className='max-w-screen-md text-sm sm:text-lg'>
+                    <h1 className="place-content-center mb-14 sm:mb-20 text-center text-3xl sm:text-5xl font-bold mt-2 mb-5 bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text font-semibold text-transparent">
+                        Communicate with an Artificial Intelligence
+                    </h1>
                     <div className='space-y-4'>
                         {history.map((item, i) => (
                             <div className='space-y-4' key={i}>
@@ -120,9 +127,9 @@ const Chatbot = () => {
                                 <input
                                     {...register("prompt")}
                                     type="text"
-                                    placeholder="Chat with the AI!"
+                                    placeholder="Chat with GPT-3 AI!"
                                     name="prompt"
-                                    className="place-self-end py-2 px-3 rounded-full text-right border-2 border-violet-200 focus:mt-3 focus:border-none focus:outline-none focus:outline-[5px] focus:outline-violet-400 focus:animate-pulse hover:outline hover:outline-4 hover:outline-violet-200 shadow-xl"
+                                    className="place-self-end py-2 px-3 rounded-full text-right border-2 border-violet-200  focus:border-none focus:outline-none focus:outline-[5px] focus:outline-violet-400 focus:animate-pulse hover:outline hover:outline-4 hover:outline-violet-200 shadow-xl"
                                 />
                             </form>
                         </div>
