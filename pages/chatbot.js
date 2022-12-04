@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import styles from "../styles/Home.module.css";
+import { data } from 'autoprefixer';
 
 const Chatbot = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const [loading, setLoading] = useState(null);
     const [active, setActive] = useState('');
     const [conversation, setConversation] = useState([]);
     const [history, setHistory] = useState([]);
 
-    const onSubmit = async (data) => {
+    const onSubmit = async (data, e) => {
+        e.target.reset();
 
         const OPENAI_API_TOKEN = process.env.OPENAI_API_TOKEN;
         // set loading state to true to initialize
@@ -111,8 +113,8 @@ const Chatbot = () => {
                         }
                     </div>
                     <div className='mt-8'>
-                        <p className='mr-10 sm:mx-20 text-right text-xs text-gray-400'>Suggestion: &apos;Tell me a story!&apos;</p>
-                        <div className='flex place-content-end'>
+                        <p className='ml-14 text-center sm:ml-24 text-xs text-gray-400'>Suggestion: &apos;Tell me a story!&apos;</p>
+                        <div className='flex place-content-center'>
                             <h1 className='place-self-center float-left mr-6 text-4xl sm:mr-12 sm:text-5xl'>🤖</h1>
                             <form onSubmit={handleSubmit(onSubmit)} className="place-self-end mt-2 rounded-full">
                                 <input
