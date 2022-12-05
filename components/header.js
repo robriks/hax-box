@@ -18,7 +18,7 @@ export default function Header() {
           </div>
         </nav>
       </header>
-      <div className='flex justify-center w-auto'>
+      <div className='flex shrink justify-center w-auto'>
         <div className='bg-gradient-to-r from-cyan-300 via-indigo-400 to-purple-900 p-4 sm:p-6 shadow-2xl rounded-full'>
           <div className='flex whitespace-nowrap justify-items-stretch p-1 text-sm sm:text-lg space-x-5 sm:space-x-10 w-auto text-white font-bold'>
             <Link href="/">
