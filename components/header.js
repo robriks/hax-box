@@ -22,22 +22,22 @@ export default function Header() {
         <div className='shrink bg-gradient-to-r from-cyan-300 via-indigo-400 to-purple-900 p-4 sm:p-6 shadow-2xl rounded-full'>
           <div className='flex shrink whitespace-nowrap justify-items-stretch p-1 text-sm sm:text-lg space-x-5 sm:space-x-10 w-auto text-white font-bold'>
             <Link href="/">
-              <a className="nav-link hover:underline">Home</a>
+              <a className="nav-link shrink hover:underline">Home</a>
             </Link>
             <Link href='/about'>
-              <a className='nav-link hover:underline'>About</a>
+              <a className='nav-link shrink hover:underline'>About</a>
             </Link>
             <Link href='https://mirror.xyz/0x65b54a4646369d8ad83cb58a5a6b39f22fcd8cee'>
-              <a className='nav-link hover:underline'>Blog</a>
+              <a className='nav-link shrink hover:underline'>Blog</a>
             </Link>
             <Link href='/nft'>
-              <a className='nav-link hover:underline'>Custom NFTs</a>
+              <a className='nav-link shrink hover:underline'>Custom NFTs</a>
             </Link>
             <Link href='/stablediffusion'>
-              <a className='nav-link hover:underline'>AI Images</a>
+              <a className='nav-link shrink hover:underline'>AI Images</a>
             </Link>
             <Link href='/chatbot'>
-              <a className='nav-link hover:underline'>AI Chat</a>
+              <a className='nav-link shrink hover:underline'>AI Chat</a>
             </Link>
           </div>
         </div>
