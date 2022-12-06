@@ -13,7 +13,7 @@ export default function NFT() {
             </Head>
 
             <div className="justify-center sm:flex">
-                <div class='max-w-md relative flex p-6 sm:w-2/3 rounded-3xl shadow-2xl'>
+                <div className='max-w-md relative flex p-6 sm:w-2/3 rounded-3xl shadow-2xl'>
                     {/* img is originally 1080 * 1350 */}
                     <Image
                         src={markus}
