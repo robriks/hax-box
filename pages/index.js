@@ -26,12 +26,12 @@ export default function Home() {
             <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-[30px] font-extrabold text-transparent sm:text-5xl">
               and
             </h2>
-            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-[42px] font-extrabold text-transparent sm:text-6xl">
+            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-[41px] font-extrabold text-transparent sm:text-6xl">
               Technology
             </h2>
             <div className="mt-8 flex flex-wrap justify-center gap-4 px-8">
               <Link href='/about'>
-                <a className="hover:underline block w-auto rounded-full border border-indigo-400 px-12 py-3 text-sm font-semibold text-white hover:bg-indigo-700 bg-indigo-400 hover:text-white focus:outline-none focus:ring active:text-opacity-75 shadow-xl">
+                <a className="hover:underline block w-auto rounded-full whitespace-nowrap border border-indigo-400 px-12 py-3 text-sm font-semibold text-white hover:bg-indigo-700 bg-indigo-400 hover:text-white focus:outline-none focus:ring active:text-opacity-75 shadow-xl">
                   About Me
                 </a>
               </Link>
