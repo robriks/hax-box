@@ -20,7 +20,7 @@ export default function Header() {
       </header>
       <div className='flex shrink justify-center w-auto'>
         <div className='bg-gradient-to-r from-cyan-300 via-indigo-400 to-purple-900 p-3 sm:p-6 shadow-2xl rounded-full border-4 border-indigo-400'>
-          <div className='flex whitespace-nowrap justify-items-stretch p-1 text-[11px] sm:text-lg space-x-4 sm:space-x-10 w-auto text-white font-bold'>
+          <div className='flex whitespace-nowrap justify-items-stretch p-1 text-[11px] sm:text-lg space-x-3 sm:space-x-10 w-auto text-white font-bold'>
             <Link href="/">
               <a className="nav-link hover:underline">Home</a>
             </Link>
