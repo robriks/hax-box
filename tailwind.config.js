@@ -5,7 +5,11 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "url('../public/gradient.png')",
+      }
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),

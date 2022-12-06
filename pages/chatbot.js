@@ -49,7 +49,7 @@ const Chatbot = () => {
         <div className={styles.container}>
             <div className='flex justify-center'>
                 <Head>
-                    <title>Text To Image AI</title>
+                    <title>AI Chat</title>
                 </Head>
 
                 <div className='max-w-screen-md text-sm sm:text-lg'>
@@ -127,7 +127,7 @@ const Chatbot = () => {
                                 <input
                                     {...register("prompt")}
                                     type="text"
-                                    placeholder="Chat with GPT-3 AI!"
+                                    placeholder="Ask GPT-3 AI anything!"
                                     name="prompt"
                                     className="place-self-end py-2 px-3 rounded-full text-right border-2 border-violet-200  focus:border-none focus:outline-none focus:outline-[5px] focus:outline-violet-400 focus:animate-pulse hover:outline hover:outline-4 hover:outline-violet-200 shadow-xl"
                                 />
