@@ -7,7 +7,7 @@ export default function Header() {
     <div className='justify-center h-auto w-auto'>
       <header className='bg-header'>
         <nav className='p-6 mx-auto justify-between max-w-screen-xl'>
-          <div className='flow-root ml-4 mt-2'>
+          <div className='flow-root mt-2'>
             <div className='flex justify-center place-content-center rounded-full'>
               <Link href='/'>
                 <a className='max-w-md rounded-full drop-shadow-xl'>
@@ -19,8 +19,8 @@ export default function Header() {
         </nav>
       </header>
       <div className='flex shrink justify-center w-auto'>
-        <div className='object-scale-down bg-gradient-to-r from-cyan-300 via-indigo-400 to-purple-900 p-4 sm:p-6 shadow-2xl rounded-full border-4 border-indigo-400'>
-          <div className='flex whitespace-nowrap justify-items-stretch p-1 text-[13px] sm:text-lg space-x-4 sm:space-x-10 w-auto text-white font-bold'>
+        <div className='bg-gradient-to-r from-cyan-300 via-indigo-400 to-purple-900 p-3 sm:p-6 shadow-2xl rounded-full border-4 border-indigo-400'>
+          <div className='flex whitespace-nowrap justify-items-stretch p-1 text-[11px] sm:text-lg space-x-4 sm:space-x-10 w-auto text-white font-bold'>
             <Link href="/">
               <a className="nav-link hover:underline">Home</a>
             </Link>

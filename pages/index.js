@@ -50,7 +50,7 @@ export default function Home() {
             <Image src={gm} alt='gif of KweenBirb saying gm' height='512' width='512' className='flex rounded-3xl' />
           </a>
         </div>
-        <div className='hover:scale-110 max-w-sm max-h-sm p-6 py-2 rounded-full shadow-2xl bg-gradient-to-r from-violet-300 via-blue-300 to-indigo-400'>
+        <div className='hover:scale-110 max-w-sm max-h-sm p-6 py-2 rounded-full shadow-2xl bg-gradient-to-r from-violet-300 via-blue-300 to-indigo-400 border-4 border-indigo-300'>
           <Link href='/about'>
             <a className="rounded-full">
               <h2 className='text-sm text-center italic font-bold leading-normal mb-2 mt-2'>
@@ -72,6 +72,7 @@ export default function Home() {
         <p className='mb-4'>Not sure if a Blockchain solution is right for your business?</p>
         <p className='text-sm text-gray-600'>Contact me or inquire about a consultation!</p>
         <p className='mt-4 mb-4'>Just looking around?</p> */}
+        {/* <div className="shadow-2xl rounded-xl"> */}
         <p className='text-center mb-2'>While you&apos;re here,</p>
         <p className="text-sm text-gray-600">
           Have a look around! Try playing around with my
@@ -83,6 +84,7 @@ export default function Home() {
             <a className='text-md text-blue-500 hover:underline'> using my NFT generator!</a>
           </Link>
         </p>
+        {/* </div> */}
       </div>
       <div className="flex justify-center">
         <p className='mt-8'>Here&apos;s a few of my other projects:</p>
