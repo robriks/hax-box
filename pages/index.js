@@ -20,13 +20,13 @@ export default function Home() {
             <h1 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-xl font-semibold text-transparent mb-3 sm:text-3xl">
               From Classical Music To Blockchain:
             </h1>
-            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-[42px] font-extrabold text-transparent sm:text-6xl">
+            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-[40px] font-extrabold text-transparent sm:text-6xl">
               Horn
             </h2>
             <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-[30px] font-extrabold text-transparent sm:text-5xl">
               and
             </h2>
-            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-[41px] font-extrabold text-transparent sm:text-6xl">
+            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-[40px] font-extrabold text-transparent sm:text-6xl">
               Technology
             </h2>
             <div className="mt-8 flex flex-wrap justify-center gap-4 px-8">
