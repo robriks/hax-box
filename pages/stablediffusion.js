@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useForm } from 'react-hook-form';
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -17,7 +18,8 @@ export default function StableDiffusion() {
     const [prediction, setPrediction] = useState(null);
     const [error, setError] = useState(null);
 
-    const handleSubmit = async (e) => {
+    // make the post request
+    const onSubmit = async (e) => {
         e.preventDefault();
         const response = await fetch("/api/predictions", {
             method: "POST",
@@ -28,6 +30,7 @@ export default function StableDiffusion() {
                 prompt: e.target.prompt.value,
             }),
         });
+        e.target.reset();
         let prediction = await response.json();
         if (response.status !== 201) {
             setError(prediction.detail);
@@ -60,24 +63,25 @@ export default function StableDiffusion() {
                 Generate images from text using AI
             </h1>
             <div className="flex place-content-center text-center pr-6 pl-6 mb-4">
-                <p className="text-[10px] ml-6 mr-6 text-gray-400">
+                <p className="text-[10px] ml-6 mr-6 text-gray-500">
                     Credit for this Stable Diffusion + MidJourney v4 model goes to
                     <a className="text-blue-400" href="https://replicate.com/prompthero/openjourney">&nbsp;prompthero/openjourney</a>
                 </p>
             </div>
-            <form className="flex justify-center" onSubmit={handleSubmit}>
+            <form className="flex justify-center" onSubmit={onSubmit}>
                 <div className="flex justify-center">
                     <input
                         className="px-3 rounded-full text-right border-2 border-violet-200 focus:border-none focus:outline-none focus:outline-[5px] focus:outline-violet-400 focus:animate-pulse hover:outline hover:outline-4 hover:outline-violet-200 shadow-xl"
                         type="text"
                         name="prompt"
-                        placeholder="Give Stable Diffusion a prompt!" />
+                        placeholder="Describe an image to the AI!" />
                     <button className="ml-4 rounded-full bg-gradient-to-r from-sky-300 via-indigo-400 to-purple-700 shadow-xl text-white p-2 border-2 border-violet-300 hover:outline hover:outline-4 hover:outline-violet-200 hover:animate-bounce hover:from-sky-500 hover:via-indigo-600 hover:to-purple-900" type="submit">
                         Create!
                     </button>
                 </div>
             </form>
-            <p className="flex justify-center m-4 text-gray-400 text-xs"> {prediction ? '( ' + prediction.status + ' )' : ''} </p>
+            <p className="flex justify-center mt-4 whitespace-nowrap text-gray-400 text-xs">{prediction ? '( ' + prediction.status + ' )' : ''}</p>
+            <p className="flex justify-center p-2 text-gray-700 text-[18px] font-medium">{prediction && prediction.status == 'succeeded' ? prediction.input.prompt : ''}</p>
 
             {prediction && (
                 <div className="flex justify-center">

@@ -17,7 +17,7 @@ export default function NFT() {
                     {/* img is originally 1080 * 1350 */}
                     <Image
                         src={markus}
-                        fill
+                        fill='true'
                         alt='Headshot'
                         className="rounded-3xl h-auto"
                     />

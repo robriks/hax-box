@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import Head from "next/head";
 
 const Chatbot = () => {
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit } = useForm();
     const [loading, setLoading] = useState(null);
     const [active, setActive] = useState('');
     const [conversation, setConversation] = useState([]);
@@ -120,7 +120,7 @@ const Chatbot = () => {
                         }
                     </div>
                     <div className='mt-8'>
-                        <p className='ml-14 text-center sm:ml-24 text-xs text-gray-400'>Suggestion: &apos;Tell me a story!&apos;</p>
+                        <p className='ml-14 text-center sm:ml-24 text-xs text-gray-500'>Suggestion: &apos;Tell me a story!&apos;</p>
                         <div className='flex place-content-center'>
                             <h1 className='place-self-center float-left mr-6 text-4xl sm:mr-12 sm:text-5xl'>🤖</h1>
                             <form onSubmit={handleSubmit(onSubmit)} className="place-self-end mt-2 rounded-full">
