@@ -47,42 +47,42 @@ export default function NFT() {
                 <div className='grid gap-2 grid-cols-3 grid-rows-2 mt-4 text-sm'>
                     <span className='rounded-xl border-2 border-indigo-200 p-2'>
                         <Link href='/stablediffusion'>
-                            <a className='text-sm text-blue-500 hover:underline'>
+                            <a className='text-xs text-blue-500 hover:underline'>
                                 An AI-powered chat app to communicate with an Artificial Intelligence
                             </a>
                         </Link>
                     </span>
                     <span className="rounded-xl border-2 border-indigo-200 p-2">
                         <Link href='/stablediffusion'>
-                            <a className='text-sm text-blue-500 hover:underline'>
+                            <a className='text-xs text-blue-500 hover:underline'>
                                 An AI-powered text to image generator
                             </a>
                         </Link>
                     </span>
                     <span className='rounded-xl border-2 border-indigo-200 p-2'>
                         <Link href='/nft'>
-                            <a className='text-sm text-blue-500 hover:underline'>
+                            <a className='text-xs text-blue-500 hover:underline'>
                                 A tool for you to turn your pictures, videos, or audio into NFTs!
                             </a>
                         </Link>
                     </span>
                     <span className='rounded-xl border-2 border-indigo-200 p-2'>
                         <Link href='https://huskycoin.vercel.app'>
-                            <a className='text-sm text-blue-500 hover:underline'>
+                            <a className='text-xs text-blue-500 hover:underline'>
                                 Web3 tutorials
                             </a>
                         </Link>
                     </span>
                     <span className='rounded-xl border-2 border-indigo-200 p-2'>
                         <Link href='https://mirror.xyz/0x65b54a4646369d8ad83cb58a5a6b39f22fcd8cee'>
-                            <a className='text-sm text-blue-500 hover:underline'>
+                            <a className='text-xs text-blue-500 hover:underline'>
                                 Blog entries on Web3 events and Solidity security vulnerabilities, hosted on-chain on Ethereum!
                             </a>
                         </Link>
                     </span>
                     <span className='rounded-xl border-2 border-indigo-200 p-2'>
                         <Link href='https://github.com/robriks/ethernaut-solutions'>
-                            <a className='text-sm text-blue-500 hover:underline'>
+                            <a className='text-xs text-blue-500 hover:underline'>
                                 Solutions to Ethernaut, the Ethereum CTF that teaches you Solidity by hacking
                             </a>
                         </Link>
