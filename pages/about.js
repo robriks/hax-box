@@ -39,54 +39,74 @@ export default function NFT() {
                 </div>
             </div>
             <div className="mt-8 text-sm">
-                <p className='font-medium mb-2'>Need a Solidity/JS developer? Looking to integrate a Web3 token/NFT with your business? In need of a blockchain or AI infra consultation?</p>
+                <p className='font-medium mb-2'>Need a Solidity/JS developer? Looking to integrate a Web3 token/NFT with your business?</p>
                 <p className="">Contact me with inquiries!</p>
-                <div className="flex justify-center">
-                    <p className='mt-8 text-base font-bold'>Projects:</p>
-                </div>
-                <div className='grid gap-2 grid-cols-3 grid-rows-2 mt-4 text-sm'>
-                    <span className='rounded-xl border-2 border-indigo-200 p-2'>
-                        <Link href='/stablediffusion'>
-                            <a className='text-xs text-blue-500 hover:underline'>
-                                An AI-powered chat app to communicate with an Artificial Intelligence
-                            </a>
-                        </Link>
-                    </span>
-                    <span className="rounded-xl border-2 border-indigo-200 p-2">
-                        <Link href='/stablediffusion'>
-                            <a className='text-xs text-blue-500 hover:underline'>
-                                An AI-powered text to image generator
-                            </a>
-                        </Link>
-                    </span>
-                    <span className='rounded-xl border-2 border-indigo-200 p-2'>
-                        <Link href='/nft'>
-                            <a className='text-xs text-blue-500 hover:underline'>
-                                A tool for you to turn your pictures, videos, or audio into NFTs!
-                            </a>
-                        </Link>
-                    </span>
-                    <span className='rounded-xl border-2 border-indigo-200 p-2'>
-                        <Link href='https://huskycoin.vercel.app'>
-                            <a className='text-xs text-blue-500 hover:underline'>
-                                Web3 tutorials
-                            </a>
-                        </Link>
-                    </span>
-                    <span className='rounded-xl border-2 border-indigo-200 p-2'>
-                        <Link href='https://mirror.xyz/0x65b54a4646369d8ad83cb58a5a6b39f22fcd8cee'>
-                            <a className='text-xs text-blue-500 hover:underline'>
-                                Blog entries on Web3 events and Solidity security vulnerabilities, hosted on-chain on Ethereum!
-                            </a>
-                        </Link>
-                    </span>
-                    <span className='rounded-xl border-2 border-indigo-200 p-2'>
-                        <Link href='https://github.com/robriks/ethernaut-solutions'>
-                            <a className='text-xs text-blue-500 hover:underline'>
-                                Solutions to Ethernaut, the Ethereum CTF that teaches you Solidity by hacking
-                            </a>
-                        </Link>
-                    </span>
+                <div className="flex flex-wrap -m-4">
+                    <div className="p-4">
+                        <div className="flex rounded-lg h-full p-8 flex-col">
+                            <h1 className='my-8 text-center text-xl font-bold'>Projects</h1>
+                            <div className="grid grid-cols-2 sm:grid-cols-3 items-center gap-2 mb-3">
+                                <Link href='/chatbot'>
+                                    <a>
+                                        <div className='h-48 rounded-xl border-2 border-indigo-300 p-2'>
+                                            <p className="text-lg text-center font-bold mt-1">🤖 💬</p>
+                                            <p className="text-base text-center font-bold mb-2">Smart AI Chatbot</p>
+                                            <p className="text-[11px] hover:underline">Communicate with an Artificial Intelligence via chat app</p>
+                                        </div>
+                                    </a>
+                                </Link>
+                                <Link href='/stablediffusion'>
+                                    <a>
+                                        <div className="h-48 rounded-xl border-2 border-indigo-300 p-2">
+                                            <p className="text-lg text-center font-bold mt-1">🤖 🖼️</p>
+                                            <p className="text-base text-center font-bold mb-2">Image Generator</p>
+                                            <p className="text-[11px] hover:underline">Generate images from text descriptions using AI</p>
+
+                                        </div>
+                                    </a>
+                                </Link>
+                                <Link href='/nft'>
+                                    <a>
+                                        <div className='h-48 rounded-xl border-2 border-indigo-300 p-2'>
+                                            <p className="text-lg text-center font-bold">🦄 🐒</p>
+                                            <p className="text-base text-center font-bold mb-2">NFT Generator</p>
+                                            <p className="text-[11px] hover:underline">A tool to turn your pictures, videos, or audio into NFTs!</p>
+                                        </div>
+                                    </a>
+                                </Link>
+                                <Link href='https://huskycoin.vercel.app'>
+                                    <a>
+                                        <div className='h-48 rounded-xl border-2 border-indigo-300 p-2'>
+                                            <p className="text-lg text-center font-extrabold text-orange-400">₿
+                                                <a className="text-blue-600">&nbsp;Ξ</a>
+                                            </p>
+                                            <p className="text-base text-center font-bold mb-2">Web3 Tutorials</p>
+                                            <p className="text-[11px] hover:underline">Learn crypto fundamentals by using a blockchain</p>
+                                        </div>
+                                    </a>
+                                </Link>
+                                <Link href='https://mirror.xyz/0x65b54a4646369d8ad83cb58a5a6b39f22fcd8cee'>
+                                    <a>
+                                        <div className='h-48 rounded-xl border-2 border-indigo-300 p-2'>
+                                            <p className="text-lg text-center font-bold">⛓️ 📝</p>
+                                            <p className="text-base text-center font-bold mb-2">On-Chain Blog</p>
+                                            <p className="text-[11px] hover:underline">Blog entries on Solidity security exploits hosted on Ethereum!</p>
+                                        </div>
+                                    </a>
+                                </Link>
+                                <Link href='https://github.com/robriks/ethernaut-solutions'>
+                                    <a>
+                                        <div className='h-48 rounded-xl border-2 border-indigo-300 p-2'>
+                                            <p className="text-lg text-center font-bold">🧑🏻‍💻 💻</p>
+                                            <p className="text-base text-center font-bold mb-2">Ethical Hacking</p>
+                                            <p className="text-[11px] hover:underline">My solutions to Ethernaut, a CTF for learning Solidity by hacking</p>
+                                        </div>
+                                    </a>
+                                </Link>
+                            </div>
+                            {/* </div> */}
+                        </div>
+                    </div>
                 </div>
             </div>
 
