@@ -36,14 +36,19 @@ export default function NFT() {
                         His work oscillates between weekly performances with the National Symphony Orchestra and late nights fiddling with his Solidity smart contracts or Javascript webapps like the one you&apos;re on now:
                         <a href="https://horn.technology" className="text-blue-500"> horn.technology</a>
                     </p>
+                    <p className="px-6 text-sm font-bold sm:text-xs lg:text-lg sm:place-self-center sm:ml-2 md:text-md sm:max-w-prose">
+                        Need a Solidity/JS developer? Looking to integrate a Web3 token/NFT with your business?
+                    </p>
+                    <p className="px-6 py-4 text-sm sm:text-xs lg:text-lg sm:place-self-center sm:ml-2 md:text-md sm:max-w-prose">
+                        Contact me with inquiries!
+                    </p>
                 </div>
             </div>
             <div className="mt-8 text-sm">
-                <p className='font-medium mb-2'>Need a Solidity/JS developer? Looking to integrate a Web3 token/NFT with your business?</p>
-                <p className="">Contact me with inquiries!</p>
+
                 <div className="flex flex-wrap -m-4">
                     <div className="p-4">
-                        <div className="flex rounded-lg h-full p-8 flex-col">
+                        <div className="flex rounded-lg h-full flex-col">
                             <h1 className='my-8 text-center text-xl font-bold'>Projects</h1>
                             <div className="grid grid-cols-2 sm:grid-cols-3 items-center gap-2 mb-3">
                                 <Link href='/chatbot'>
