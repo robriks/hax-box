@@ -47,64 +47,62 @@ export default function NFT() {
                             <h1 className='my-8 text-center text-xl font-bold'>Projects</h1>
                             <div className="grid grid-cols-2 sm:grid-cols-3 items-center gap-2 mb-3">
                                 <Link href='/chatbot'>
-                                    <a>
-                                        <div className='h-48 rounded-xl border-2 border-indigo-300 p-2'>
+                                    <div className='flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl'>
+                                        <div>
                                             <p className="text-lg text-center font-bold mt-1">🤖 💬</p>
-                                            <p className="text-base text-center font-bold mb-2">Smart AI Chatbot</p>
-                                            <p className="text-[11px] hover:underline">Communicate with an Artificial Intelligence via chat app</p>
+                                            <p className="text-base text-center font-bold mb-2 sm:whitespace-nowrap">Smart AI Chatbot</p>
+                                            <p className="ml-1 text-[11px] leading-snug hover:underline">Communicate with an Artificial Intelligence via chat app</p>
                                         </div>
-                                    </a>
+                                    </div>
                                 </Link>
                                 <Link href='/stablediffusion'>
-                                    <a>
-                                        <div className="h-48 rounded-xl border-2 border-indigo-300 p-2">
+                                    <div className="flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl">
+                                        <div>
                                             <p className="text-lg text-center font-bold mt-1">🤖 🖼️</p>
-                                            <p className="text-base text-center font-bold mb-2">Image Generator</p>
-                                            <p className="text-[11px] hover:underline">Generate images from text descriptions using AI</p>
-
+                                            <p className="text-base text-center font-bold mb-2 sm:whitespace-nowrap">Image Generator</p>
+                                            <p className="ml-1 text-[11px] leading-snug hover:underline">Generate images from text descriptions using AI</p>
                                         </div>
-                                    </a>
+                                    </div>
                                 </Link>
                                 <Link href='/nft'>
-                                    <a>
-                                        <div className='h-48 rounded-xl border-2 border-indigo-300 p-2'>
+                                    <div className='flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl'>
+                                        <div>
                                             <p className="text-lg text-center font-bold">🦄 🐒</p>
                                             <p className="text-base text-center font-bold mb-2">NFT Generator</p>
-                                            <p className="text-[11px] hover:underline">A tool to turn your pictures, videos, or audio into NFTs!</p>
+                                            <p className="ml-1 text-[11px] leading-snug hover:underline">A tool to turn your pictures, videos, or audio into NFTs!</p>
                                         </div>
-                                    </a>
+                                    </div>
                                 </Link>
                                 <Link href='https://huskycoin.vercel.app'>
-                                    <a>
-                                        <div className='h-48 rounded-xl border-2 border-indigo-300 p-2'>
+                                    <div className='flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl'>
+                                        <div>
                                             <p className="text-lg text-center font-extrabold text-orange-400">₿
                                                 <a className="text-blue-600">&nbsp;Ξ</a>
                                             </p>
                                             <p className="text-base text-center font-bold mb-2">Web3 Tutorials</p>
-                                            <p className="text-[11px] hover:underline">Learn crypto fundamentals by using a blockchain</p>
+                                            <p className="ml-1 text-[11px] leading-snug hover:underline">Learn crypto fundamentals by using a blockchain</p>
                                         </div>
-                                    </a>
+                                    </div>
                                 </Link>
                                 <Link href='https://mirror.xyz/0x65b54a4646369d8ad83cb58a5a6b39f22fcd8cee'>
-                                    <a>
-                                        <div className='h-48 rounded-xl border-2 border-indigo-300 p-2'>
+                                    <div className='flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl'>
+                                        <div>
                                             <p className="text-lg text-center font-bold">⛓️ 📝</p>
                                             <p className="text-base text-center font-bold mb-2">On-Chain Blog</p>
-                                            <p className="text-[11px] hover:underline">Blog entries on Solidity security exploits hosted on Ethereum!</p>
+                                            <p className="ml-1 text-[11px] leading-snug hover:underline">Blog entries on Solidity security exploits hosted on Ethereum!</p>
                                         </div>
-                                    </a>
+                                    </div>
                                 </Link>
                                 <Link href='https://github.com/robriks/ethernaut-solutions'>
-                                    <a>
-                                        <div className='h-48 rounded-xl border-2 border-indigo-300 p-2'>
+                                    <div className='flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl'>
+                                        <div>
                                             <p className="text-lg text-center font-bold">🧑🏻‍💻 💻</p>
                                             <p className="text-base text-center font-bold mb-2">Ethical Hacking</p>
-                                            <p className="text-[11px] hover:underline">My solutions to Ethernaut, a CTF for learning Solidity by hacking</p>
+                                            <p className="ml-1 text-[11px] leading-snug hover:underline">My solutions to Ethernaut, a CTF for learning Solidity by hacking</p>
                                         </div>
-                                    </a>
+                                    </div>
                                 </Link>
                             </div>
-                            {/* </div> */}
                         </div>
                     </div>
                 </div>

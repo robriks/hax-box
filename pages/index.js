@@ -20,13 +20,13 @@ export default function Home() {
             <h1 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-xl font-semibold text-transparent mb-3 sm:text-3xl">
               From Classical Music To Blockchain:
             </h1>
-            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-[40px] font-extrabold text-transparent sm:text-6xl">
+            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-[39px] font-extrabold text-transparent sm:text-6xl">
               Horn
             </h2>
             <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-[30px] font-extrabold text-transparent sm:text-5xl">
               and
             </h2>
-            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-[40px] font-extrabold text-transparent sm:text-6xl">
+            <h2 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-[39px] font-extrabold text-transparent sm:text-6xl">
               Technology
             </h2>
             <div className="mt-8 flex flex-wrap justify-center gap-4 px-8">
@@ -50,7 +50,7 @@ export default function Home() {
             <Image src={gm} alt='gif of KweenBirb saying gm' height='512' width='512' className='flex rounded-3xl' />
           </a>
         </div>
-        <div className='hover:scale-110 max-w-sm max-h-sm p-6 py-2 rounded-full shadow-2xl bg-gradient-to-r from-violet-300 via-blue-300 to-indigo-400 border-4 border-indigo-300'>
+        <div className='hover:scale-110 max-w-sm max-h-sm p-6 py-2 rounded-full shadow-2xl bg-gradient-to-r from-blue-200 via-indigo-300 to-violet-400 border-4 border-indigo-300'>
           <Link href='/about'>
             <a className="rounded-full">
               <h2 className='text-sm text-center italic font-bold leading-normal mb-2 mt-2'>
@@ -68,7 +68,7 @@ export default function Home() {
       </div >
       <div className="place-self-center backdrop-blur-xs rounded-3xl mt-4 mx-4 sm:mx-4 sm:my-4 shadow-xl">
         <div className='justify-center mt-12 p-8'>
-          <p className='text-center mb-2 whitespace-nowrap'>While you&apos;re here,</p>
+          <p className='text-center mb-2 text-xl whitespace-nowrap'>While you&apos;re here,</p>
           <p className="text-sm text-gray-600">
             Have a look around! Try playing around with my
             <Link href='/stablediffusion'>
