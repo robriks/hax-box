@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { create } from 'ipfs-http-client';
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { loadPortraitNFTs } from "../components/portrait-nfts";
 
 // import { nftFactoryAddress } from '../config';
 // import NFTGenerator from '../artifacts/contracts/NFTGenerator.sol/NFTGenerator.json';
