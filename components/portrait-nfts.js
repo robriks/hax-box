@@ -1,14 +1,10 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 
-import { portraitsAddress } from '../config';
-// import NFTGenerator from '../artifacts/contracts/NFTGenerator.sol/NFTGenerator.json';
+import { portraitsAddress } from '../config.js';
+// import Portraits from '../artifacts/contracts/NFTGenerator.sol/NFTGenerator.json';
 
-const projectId = process.env.INFURA_IPFS_ID;
-const projectSecret = process.env.INFURA_IPFS_SECRET;
-const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64');
-
-
+const apiKey = process.env.INFURA_ID;
 
 export default function loadPortraitNFTs() {
     const [nfts, setNfts] = useState([])
@@ -19,8 +15,8 @@ export default function loadPortraitNFTs() {
     }, [])
 
     async function loadNFTs() {
-        const provider = new ethers.providers.JsonRpcProvider('https://rinkeby.infura.io/v3/e365267f08f0496abe0b04e071a4bc1f')
-        const marketContract = new ethers.Contract(hornmarketplaceaddress, HornMarketplace.abi, provider)
+        const provider = new ethers.providers.JsonRpcProvider(`https://rinkeby.infura.io/v3/${apiKey}`)
+        const marketContract = new ethers.Contract(portraitsAddress, Portraits.abi, provider)
         const data = await marketContract.getCurrentlyListedHorns()
         let nonZeroData = data.filter(horn => horn.tokenId != 0)
 
