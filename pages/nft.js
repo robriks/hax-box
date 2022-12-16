@@ -121,8 +121,8 @@ export default function GenerateNFT() {
                         />
                         {
                             fileUrl && (
-                                <img className="rounded-md" fill="true" src={fileUrl} />
-
+                                // convert to <Image> !!!
+                                <img className="rounded-md" fill="true" alt="Uploaded IPFS Image" src={fileUrl} />
                             )
                         }
                     </div>

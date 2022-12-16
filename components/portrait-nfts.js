@@ -6,7 +6,7 @@ import { portraitsAddress } from '../config.js';
 
 const apiKey = process.env.INFURA_ID;
 
-export default function loadPortraitNFTs() {
+export default function LoadPortraitNFTs() {
     const [nfts, setNfts] = useState([])
     const [loadingState, setLoadingState] = useState('not-loaded')
 
@@ -34,24 +34,24 @@ export default function loadPortraitNFTs() {
     }
 
     return (
-        <div className="page">
-            <h2>Horns For Sale</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-2">
-                {
-                    nfts.map((nft, i) => (
-                        <div key={i} className="card">
-                            <div className="p-3">
-                                <p style={{ height: '50px' }} className="flex justify-center text-3xl font-semibold p-4">{nft.make}</p>
-                                <div style={{ height: "30px", overflow: 'hidden' }}>
-                                    <p className="flex justify-center text-gray-400 p-1">Model: {nft.model}</p>
-                                </div>
-                            </div>
-                            <img src={nft.image} />
-                        </div>
-                    )
-                    )
-                }
-            </div>
-        </div>
+        // <div className="page">
+        //     <h2>Horns For Sale</h2>
+        //     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pt-2">
+        //         {
+        //             nfts.map((nft, i) => (
+        //                 <div key={i} className="card">
+        //                     <div className="p-3">
+        //                         <p style={{ height: '50px' }} className="flex justify-center text-3xl font-semibold p-4">{nft.make}</p>
+        //                         <div style={{ height: "30px", overflow: 'hidden' }}>
+        //                             <p className="flex justify-center text-gray-400 p-1">Model: {nft.model}</p>
+        //                         </div>
+        //                     </div>
+        //                     <Image alt="AI Portrait NFTs" src={nft.image} />
+        //                 </div>
+        //             )
+        //             )
+        //         }
+        //     </div>
+        // </div>
     )
 }

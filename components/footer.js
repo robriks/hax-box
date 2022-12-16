@@ -12,10 +12,11 @@ export default function Footer() {
             </div>
 
             <div className='flex justify-center'>
-                <div className='p-4'> 
+                <div className='p-4'>
                     <a
                         href='https://github.com/robriks/HuskyCoin'>
                         <Image
+                            alt='Github Logo'
                             src={githubLogo}
                         />
                     </a>
@@ -24,6 +25,7 @@ export default function Footer() {
                     <a
                         href='https://twitter.com/marsterlund'>
                         <Image
+                            alt='Twitter Logo'
                             src={twitterLogo}
                         />
                     </a>
@@ -32,6 +34,7 @@ export default function Footer() {
                     <a
                         href='https://instagram.com/marsterlund'>
                         <Image
+                            alt='Instagram Logo'
                             src={instagramLogo}
                         />
                     </a>
