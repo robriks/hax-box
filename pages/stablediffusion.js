@@ -75,7 +75,9 @@ export default function StableDiffusion() {
                         type="text"
                         name="prompt"
                         placeholder="Describe an image to the AI!" />
-                    <button className="ml-4 rounded-full bg-gradient-to-r from-sky-300 via-indigo-400 to-purple-700 shadow-xl text-white p-2 border-2 border-violet-300 hover:outline hover:outline-4 hover:outline-violet-200 hover:animate-bounce hover:from-sky-500 hover:via-indigo-600 hover:to-purple-900" type="submit">
+                    <button
+                        className="ml-4 rounded-full bg-gradient-to-r from-sky-300 via-indigo-400 to-purple-700 shadow-xl text-white p-2 border-2 border-violet-300 hover:outline hover:outline-4 hover:outline-violet-200 hover:animate-bounce hover:from-sky-500 hover:via-indigo-600 hover:to-purple-900"
+                        type="submit">
                         Create!
                     </button>
                 </div>

@@ -6,7 +6,10 @@ const nextConfig = {
     domains: ["replicate.com", "replicate.delivery"],
   },
   env: {
-    OPENAI_API_TOKEN: `${process.env.OPENAI_API_TOKEN}`
+    OPENAI_API_TOKEN: `${process.env.OPENAI_API_TOKEN}`,
+    INFURA_IPFS_ID: `${process.env.INFURA_IPFS_ID}`,
+    INFURA_IPFS_SECRET: `${process.env.INFURA_IPFS_SECRET}`,
+    INFURA_ID: `${process.env.INFURA_ID}`
   }
 };
 

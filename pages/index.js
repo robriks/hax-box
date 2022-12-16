@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
 
 
-      <section className="text-black">
+      <section>
         <div className="mx-auto max-w-screen-xl lg:flex">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-900 bg-clip-text text-xl font-semibold text-transparent mb-3 sm:text-3xl">
@@ -50,13 +50,13 @@ export default function Home() {
             <Image src={gm} alt='gif of KweenBirb saying gm' height='512' width='512' className='flex rounded-3xl' />
           </a>
         </div>
-        <div className='hover:scale-110 max-w-sm max-h-sm p-6 py-2 rounded-full shadow-2xl bg-gradient-to-r from-blue-200 via-indigo-300 to-violet-400 border-4 border-indigo-300'>
+        <div className='hover:scale-110 max-w-sm max-h-sm p-6 py-2 rounded-3xl shadow-2xl bg-gradient-to-r from-blue-200 via-indigo-300 to-violet-400 border-4 border-indigo-300'>
           <Link href='/about'>
             <a className="rounded-full">
               <h2 className='text-sm text-center italic font-bold leading-normal mb-2 mt-2'>
                 ~ GM! ~
               </h2>
-              <h2 className='text-xs sm:text-sm text-center italic leading-normal'>
+              <h2 className='text-[11px] sm:text-sm text-center italic leading-normal'>
                 Welcome to my personal page, where you&apos;ll find my metaversal footprint in its entirety:
                 from blockchain and AI to orchestral music!
               </h2>
