@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["replicate.com", "replicate.delivery"],
+    domains: ["replicate.com", "replicate.delivery", "arweave.net"],
   },
   env: {
     OPENAI_API_TOKEN: `${process.env.OPENAI_API_TOKEN}`,

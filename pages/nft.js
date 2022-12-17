@@ -1,10 +1,14 @@
 import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
+import { ethers } from "ethers";
+import axios from "axios";
 import styles from "../styles/Home.module.css";
 import { create } from 'ipfs-http-client';
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { loadPortraitNFTs } from "../components/portrait-nfts";
+import LoadPortraitNFTs from "../components/portrait-nfts.js";
+console.log(LoadPortraitNFTs)
 
 // import { nftFactoryAddress } from '../config';
 // import NFTGenerator from '../artifacts/contracts/NFTGenerator.sol/NFTGenerator.json';
@@ -58,49 +62,51 @@ export default function GenerateNFT() {
                                 Generate Your Own NFTs
                             </h1>
                             <div className="flex items-center place-self-center backdrop-blur-xs rounded-3xl mt-8 mx-4 sm:mx-12 sm:my-4 md:mx-20 lg:mx-6 shadow-2xl">
-                                <div className="object-contain p-3 text-[11px] font-medium text-gray-800 leading-snug sm:text-base lg:text-lg">
-                                    <a className="text-[14px] sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
-                                        Mint custom content as NFTs&nbsp;
-                                    </a>
-                                    on Ethereum&apos;s&nbsp;
-                                    <Link href="https://polygon.technology/">
-                                        <a
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-blue-600 hover:underline">
-                                            Polygon&nbsp;
+                                <div className="p-5 text-[11px] font-medium text-gray-800 leading-snug sm:text-base lg:text-lg">
+                                    <div className="object-contain">
+                                        <a className="text-[14px] sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
+                                            Mint custom content as NFTs&nbsp;
                                         </a>
-                                    </Link>
-                                    or&nbsp;
-                                    <Link href="https://arbitrum.io/">
-                                        <a
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-blue-600 hover:underline">
-                                            Arbitrum&nbsp;
-                                        </a>
-                                    </Link>
-                                    blockchains in three steps:
-                                    <ul className="list-disc my-1 sm:my-4 sm:text-sm text-gray-800 font-normal marker:text-violet-500 marker:text-sm">
-                                        <li>Upload picture, video, or music</li>
-                                        <li>Connect Web3 wallet</li>
-                                        <li>Submit mint transaction</li>
-                                    </ul>
-                                    Protocol gas fees cost less than 10 cents!
-                                    <p className="mt-2 font-normal text-[10px] sm:text-xs text-gray-600">
-                                        These NFTs are&nbsp;
+                                        on Ethereum&apos;s&nbsp;
                                         <Link href="https://polygon.technology/">
                                             <a
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="text-blue-600 hover:underline">
-                                                hosted on IPFS
+                                                Polygon&nbsp;
                                             </a>
                                         </Link>
-                                        &nbsp;and minted as a unique tokenId by a generic smart contract I&apos;ve already coded and deployed.
-                                        <br className="mb-1 sm:mb-2" />
-                                        ** For personalized NFT projects or deployments to other chains such as mainnet Ethereum, contact me.
-                                    </p>
+                                        or&nbsp;
+                                        <Link href="https://arbitrum.io/">
+                                            <a
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-blue-600 hover:underline">
+                                                Arbitrum&nbsp;
+                                            </a>
+                                        </Link>
+                                        blockchains in three steps:
+                                        <ul className="list-disc my-1 sm:my-4 sm:text-sm text-gray-800 font-normal">
+                                            <p><a className="text-base text-violet-500">★&nbsp;</a>Upload picture, video, or music</p>
+                                            <p><a className="text-base text-violet-500">★&nbsp;</a>Connect Web3 wallet</p>
+                                            <p><a className="text-base text-violet-500">★&nbsp;</a>Submit mint transaction</p>
+                                        </ul>
+                                        Protocol gas fees cost less than 10 cents!
+                                        <p className="mt-2 font-normal text-[10px] sm:text-xs text-gray-600">
+                                            These NFTs are&nbsp;
+                                            <Link href="https://polygon.technology/">
+                                                <a
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-blue-600 hover:underline">
+                                                    hosted on IPFS
+                                                </a>
+                                            </Link>
+                                            &nbsp;and minted as a unique tokenId by a generic smart contract I&apos;ve already coded and deployed.
+                                            <br className="mb-1 sm:mb-2" />
+                                            ** For personalized NFT projects or deployments to other chains such as mainnet Ethereum, contact me.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -191,7 +197,10 @@ export default function GenerateNFT() {
                     </div>
                 </section>
                 <section className="font-medium text-center text-xs sm:text-base md:text-lg text-gray-800">
-                    <p className="mx-4 mt-5">Check out these AI-generated portraits 👦🏻👦🏻 that we turned into Polygon NFTs! 😍😍</p>
+                    <div className="md:mx-20 lg:mx-48">
+                        <p className="mx-4 mt-5">Check out these AI-generated portraits 👦🏻👦🏻 hosted on the Arweave blockchain that we turned into Polygon NFTs! 😍😍</p>
+                        <LoadPortraitNFTs />
+                    </div>
                 </section>
             </div>
         </div>

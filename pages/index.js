@@ -66,11 +66,15 @@ export default function Home() {
           </Link>
         </div>
       </div >
-      <div className="place-self-center backdrop-blur-xs rounded-3xl mt-4 mx-4 sm:mx-4 sm:my-4 shadow-xl">
+      <div className="place-self-center backdrop-blur-xs rounded-3xl mt-4 mx-4 sm:mx-4 sm:my-4 md:mx-12 lg:mx-48 shadow-xl">
         <div className='justify-center mt-12 p-8'>
           <p className='text-center mb-2 text-xl whitespace-nowrap'>While you&apos;re here,</p>
-          <p className="text-sm text-gray-600">
-            Have a look around! Try playing around with my
+          <p className="text-center text-sm text-gray-600">
+            Have a look around! Turn a photo or video into an NFT using my
+            <Link href='/nft'>
+              <a className="text-md text-blue-500 hover:underline"> NFT generator,</a>
+            </Link>
+            &nbsp;play around with my
             <Link href='/stablediffusion'>
               <a className="text-md text-blue-500 hover:underline"> text to image AI tool</a>
             </Link>
