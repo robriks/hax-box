@@ -8,7 +8,6 @@ import styles from "../styles/Home.module.css";
 import { create } from 'ipfs-http-client';
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import LoadPortraitNFTs from "../components/portrait-nfts.js";
-console.log(LoadPortraitNFTs)
 
 // import { nftFactoryAddress } from '../config';
 // import NFTGenerator from '../artifacts/contracts/NFTGenerator.sol/NFTGenerator.json';
@@ -61,10 +60,10 @@ export default function GenerateNFT() {
                             <h1 className="place-content-center mb-14 sm:mb-20 text-center text-3xl sm:text-5xl font-bold mt-2 mb-5 bg-gradient-to-r from-cyan-400 via-violet-400 to-purple-800 bg-clip-text text-transparent">
                                 Generate Your Own NFTs
                             </h1>
-                            <div className="flex items-center place-self-center backdrop-blur-xs rounded-3xl mt-8 mx-4 sm:mx-12 sm:my-4 md:mx-20 lg:mx-6 shadow-2xl">
+                            <div className="flex items-center place-self-center backdrop-blur-xs rounded-3xl mt-8 sm:mx-12 sm:my-4 md:mx-20 lg:mx-6 shadow-2xl">
                                 <div className="p-5 text-[11px] font-medium text-gray-800 leading-snug sm:text-base lg:text-lg">
                                     <div className="object-contain">
-                                        <a className="text-[14px] sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
+                                        <a className="text-[13px] sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
                                             Mint custom content as NFTs&nbsp;
                                         </a>
                                         on Ethereum&apos;s&nbsp;
@@ -116,7 +115,7 @@ export default function GenerateNFT() {
                     <div className="mt-8 mb-3 w-96 text-center">
                         <p className="mb-5 text-[18px] sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
                             <a className="text-[18px] text-gray-800">1.&nbsp;&nbsp;</a>
-                            Upload a file ( to IPFS )
+                            Upload a file (&nbsp;to IPFS&nbsp;)
                         </p>
                         <input
                             className="form-control block w-full px-2 py-1.5 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-4 border-indigo-300 rounded-2xl transition  focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -199,7 +198,7 @@ export default function GenerateNFT() {
                 <section className="font-medium text-center text-xs sm:text-base md:text-lg text-gray-800">
                     <div className="md:mx-20 lg:mx-48">
                         <p className="mx-4 mt-5">Check out these AI-generated portraits 👦🏻👦🏻 hosted on the Arweave blockchain that we turned into Polygon NFTs! 😍😍</p>
-                        <LoadPortraitNFTs />
+                        {<LoadPortraitNFTs />}
                     </div>
                 </section>
             </div>
