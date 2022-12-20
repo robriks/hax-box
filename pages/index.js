@@ -67,20 +67,23 @@ export default function Home() {
         </div>
       </div >
       <div className="place-self-center backdrop-blur-xs rounded-3xl mt-4 mx-4 sm:mx-4 sm:my-4 md:mx-12 lg:mx-48 shadow-xl">
-        <div className='justify-center mt-12 p-8'>
-          <p className='text-center mb-2 text-xl whitespace-nowrap'>While you&apos;re here,</p>
+        <div className='justify-center mt-12 p-6 sm:p-8'>
+          <div className="mx-auto whitespace-nowrap text-center text-xl sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
+            While you&apos;re here,
+          </div>
           <p className="text-center text-sm text-gray-600">
-            Have a look around! Turn a photo or video into an NFT using my
+
+            &nbsp;have a look around! Turn a photo or video into an NFT using my
             <Link href='/nft'>
-              <a className="text-md text-blue-500 hover:underline"> NFT generator,</a>
+              <a className="text-blue-500 hover:underline"> NFT generator,</a>
             </Link>
             &nbsp;play around with my
             <Link href='/stablediffusion'>
-              <a className="text-md text-blue-500 hover:underline"> text to image AI tool</a>
+              <a className="text-blue-500 hover:underline"> text to image AI tool</a>
             </Link>
             &nbsp;or communicate with an Artificial Intelligence&nbsp;
             <Link href='/chatbot'>
-              <a className='text-md text-blue-500 hover:underline'>using my AI chatapp!</a>
+              <a className='text-blue-500 hover:underline'>using my AI chatapp!</a>
             </Link>
           </p>
         </div>
