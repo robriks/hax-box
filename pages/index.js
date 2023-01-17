@@ -68,7 +68,7 @@ export default function Home() {
       </div >
       <div className="place-self-center backdrop-blur-xs rounded-3xl mt-4 mx-4 sm:mx-4 sm:my-4 md:mx-12 lg:mx-48 shadow-xl">
         <div className='justify-center mt-12 p-6 sm:p-8'>
-          <div className="mx-auto whitespace-nowrap text-center text-xl sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
+          <div className="mx-auto sm:whitespace-nowrap text-center text[19px] sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
             While you&apos;re here,
           </div>
           <p className="text-center text-sm text-gray-600">
