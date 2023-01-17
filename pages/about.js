@@ -97,7 +97,7 @@ export default function NFT() {
                                 <Link href='https://github.com/robriks/ethernaut-solutions'>
                                     <div className='flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl'>
                                         <div>
-                                            <p className="text-lg text-center font-bold">🧑🏻‍💻 💻</p>
+                                            <p className="text-lg text-center font-bold">🧑🏻‍💻</p>
                                             <p className="text-base text-center font-bold mb-2">Ethical Hacking</p>
                                             <p className="ml-1 text-[11px] leading-snug hover:underline">My solutions to Ethernaut, a CTF for learning Solidity by hacking</p>
                                         </div>
