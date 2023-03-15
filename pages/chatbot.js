@@ -23,7 +23,7 @@ const Chatbot = () => {
             'https://api.openai.com/v1/completions',
             {
                 prompt: data.prompt,
-                model: 'text-davinci-003',
+                model: 'gpt-3.5-turbo',
                 max_tokens: 1024,
                 temperature: 0.5
             },
