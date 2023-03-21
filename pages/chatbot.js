@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { Configuration, OpenAIApi } from "openai";
 import styles from "../styles/Home.module.css";
 import Head from "next/head";
+import Image from "next/image";
+import kweenbirb from "../public/9535.gif";
 
 const Chatbot = () => {
   const { register, handleSubmit } = useForm();
@@ -37,7 +39,7 @@ const Chatbot = () => {
             content: data.prompt,
           },
         ],
-        max_tokens: 200,
+        max_tokens: 500,
         temperature: 0.7,
       })
       .then((res) => {
@@ -132,24 +134,36 @@ const Chatbot = () => {
             )}
           </div>
           <div className="mt-8">
-            <p className="ml-14 text-center sm:ml-24 text-xs text-gray-500">
+            <p className="mr-14 text-center sm:mr-24 text-xs text-gray-500">
               Suggestion: &apos;Tell me a story!&apos;
             </p>
             <div className="flex place-content-center">
-              <h1 className="place-self-center float-left mr-6 text-4xl sm:mr-12 sm:text-5xl">
-                🤖
-              </h1>
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className="place-self-end mt-2 rounded-full"
+                className="flex place-self-center mt-2 rounded-full"
+                id="chat"
               >
                 <input
                   {...register("prompt")}
                   type="text"
-                  placeholder="Ask GPT-3 AI anything!"
+                  placeholder="Ask GPT-4 AI anything!"
                   name="prompt"
-                  className="place-self-end py-2 px-3 rounded-full text-right border-2 border-violet-200  focus:border-none focus:outline-none focus:outline-[5px] focus:outline-violet-400 focus:animate-pulse hover:outline hover:outline-4 hover:outline-violet-200 shadow-xl"
+                  className="place-self-end px-3 mb-4 rounded-full text-right border-2 border-violet-200 focus:border-none focus:outline-none focus:outline-[5px] focus:outline-violet-400 focus:animate-pulse hover:outline hover:outline-4 hover:outline-violet-300 shadow-xl"
+                  id="chat"
                 />
+                <button
+                  className="xs:flex-none place-self-center ml-3 min-w-max rounded-full drop-shadow-xl cursor-pointer hover:scale-125 focus:outline-none drop-shadow-xl"
+                  type="submit"
+                  id="chat"
+                >
+                  <Image
+                    src={kweenbirb}
+                    alt="gif of KweenBirb saying gm"
+                    height="64"
+                    width="64"
+                    className="xs:flex-none rounded-full"
+                  />
+                </button>
               </form>
             </div>
           </div>

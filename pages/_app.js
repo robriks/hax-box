@@ -1,13 +1,14 @@
-import '../styles/globals.css'
-import '@rainbow-me/rainbowkit/styles.css';
-import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
-import { configureChains, createClient, WagmiConfig } from 'wagmi';
-import { goerli, arbitrum, polygon } from 'wagmi/chains';
-import { infuraProvider } from 'wagmi/providers/infura';
+import Head from "next/head";
+import "../styles/globals.css";
+import "@rainbow-me/rainbowkit/styles.css";
+import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { configureChains, createClient, WagmiConfig } from "wagmi";
+import { goerli, arbitrum, polygon } from "wagmi/chains";
+import { infuraProvider } from "wagmi/providers/infura";
 import Header from "../components/header.js";
 import Footer from "../components/footer.js";
 
-const infuraId = process.env.INFURA_ID
+const infuraId = process.env.INFURA_ID;
 
 const { chains, provider } = configureChains(
   [polygon, arbitrum, goerli],
@@ -15,7 +16,7 @@ const { chains, provider } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: 'My RainbowKit App',
+  appName: "My RainbowKit App",
   chains,
 });
 
@@ -25,10 +26,12 @@ const wagmiClient = createClient({
   provider,
 });
 
-
 function MyApp({ Component, pageProps }) {
   return (
-    <div className='min-h-screen h-auto align-content-center bg-hero-pattern bg-fixed bg-cover bg-no-repeat bg-right'>
+    <div className="min-h-screen h-auto align-content-center bg-hero-pattern bg-fixed bg-cover bg-no-repeat bg-right">
+      <Head>
+        <link rel="icon" href="9535.gif" type="image/gif" />
+      </Head>
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider coolMode chains={chains}>
           <Header />
@@ -36,8 +39,8 @@ function MyApp({ Component, pageProps }) {
           <Footer />
         </RainbowKitProvider>
       </WagmiConfig>
-    </div >
-  )
+    </div>
+  );
 }
 
-export default MyApp
+export default MyApp;
