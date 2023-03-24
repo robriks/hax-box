@@ -70,7 +70,7 @@ const Chatbot = () => {
             {history.map((item, i) => (
               <div className="space-y-4" key={i}>
                 <div className="flex w-full space-x-4">
-                  <div className="w-full ml-8 rounded-xl p-3 shadow-xl border-2 border-violet-300 bg-violet-100 text-gray-700 overflow-x-scroll">
+                  <div className="w-full ml-8 rounded-xl p-3 shadow-xl border-2 border-violet-300 bg-violet-100 text-gray-700 overflow-x-auto">
                     <div className="w-14 shrink-0 p-1 mb-4 border-2 border-violet-500 bg-violet-400 rounded-full float-right shadow-xl">
                       <p className="text-center text-[11px] text-white font-semibold">
                         Human:&nbsp;
@@ -82,7 +82,7 @@ const Chatbot = () => {
                   </div>
                 </div>
                 <div className="flex w-full space-x-4">
-                  <div className="w-full mr-8 rounded-xl p-3 shadow-xl border-2 border-sky-300 bg-sky-100 text-gray-700 overflow-x-scroll">
+                  <div className="w-full mr-8 rounded-xl p-3 shadow-xl border-2 border-sky-300 bg-sky-100 text-gray-700 overflow-x-auto">
                     <div className="w-14 shrink-0 p-1 mb-4 border-2 border-sky-500 bg-sky-400 rounded-full float-left shadow-xl">
                       <p className="text-center text-[11px] text-white font-semibold">
                         AI:&nbsp;
@@ -100,7 +100,7 @@ const Chatbot = () => {
             {Boolean(active) && (
               <div className="space-y-4">
                 <div className="flex w-full space-x-4">
-                  <div className="w-full ml-8 rounded-xl p-3 shadow-xl border-2 border-violet-300 bg-violet-100 text-gray-700 overflow-x-scroll">
+                  <div className="w-full ml-8 rounded-xl p-3 shadow-xl border-2 border-violet-300 bg-violet-100 text-gray-700 overflow-x-auto">
                     <div className="w-14 shrink-0 p-1 mb-4 border-2 border-violet-500 bg-violet-400 rounded-full float-right shadow-xl">
                       <p className="text-center text-[11px] text-white font-semibold">
                         Human:&nbsp;
@@ -112,7 +112,7 @@ const Chatbot = () => {
                   </div>
                 </div>
                 <div className="flex w-full space-x-4">
-                  <div className="w-full mr-8 rounded-xl p-3 shadow-xl border-2 border-sky-300 bg-sky-100 text-gray-700 overflow-x-scroll">
+                  <div className="w-full mr-8 rounded-xl p-3 shadow-xl border-2 border-sky-300 bg-sky-100 text-gray-700 overflow-x-auto">
                     <div className="w-14 shrink-0 p-1 mb-4 border-2 border-sky-500 bg-sky-400 rounded-full float-left shadow-xl">
                       <p className="text-center text-[11px] text-white font-semibold">
                         AI:&nbsp;
