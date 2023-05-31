@@ -8,6 +8,7 @@ const nextConfig = {
       "replicate.delivery",
       "arweave.net",
       "horn.infura-ipfs.io",
+      "oaidalleapiprodscus.blob.core.windows.net",
     ],
   },
   env: {

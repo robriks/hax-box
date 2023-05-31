@@ -13,7 +13,6 @@ import excited from "../public/excited-loading.gif";
 
 const ImageGen = () => {
   const [prediction, setPrediction] = useState(null);
-  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   // post request to OpenAI for uploaded image prompts
@@ -66,21 +65,7 @@ const ImageGen = () => {
         Generate & Edit Images with AI
       </h1>
 
-      {editMode && (
-        <div className="justify-center p-2 sm:p-8">
-          <div className="place-self-center backdrop-blur-xs rounded-3xl sm:mx-4 sm:my-4 md:mx-12 lg:mx-48 shadow-xl">
-            <div className="p-4 mx-auto sm:whitespace-nowrap text-center text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
-              Edit Mode
-              <p className="text-center text-xs font-medium text-gray-600 whitespace-normal">
-                Create new variations from your own images. Variations can be
-                random or you may provide a text prompt for more precise changes
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-
-      <form className="mt-4" onSubmit={(e) => onSubmit(e)}>
+      <form className="mt-12" onSubmit={(e) => onSubmit(e)}>
         <div className="flex justify-center">
           <input
             className="p-3 rounded-full text-right border-2 border-violet-200 focus:border-none focus:outline-none focus:outline-[5px] focus:outline-violet-400 focus:animate-pulse hover:outline hover:outline-4 hover:outline-violet-200 shadow-xl"
@@ -112,12 +97,16 @@ const ImageGen = () => {
       {prediction && (
         <div className="flex justify-center mt-8">
           {prediction && (
-            <Image src={prediction} alt="AI image" width={1024} height={1024} />
+            <Image
+              src={prediction}
+              alt="AI image"
+              className="rounded-2xl"
+              width={1024}
+              height={1024}
+            />
           )}
         </div>
       )}
-
-      {error && <div>{error}</div>}
 
       <div className="justify-center text-center mt-10 p-6">
         <h2 className="text-xs mb-4 text-gray-500">
