@@ -67,7 +67,7 @@ export default function NFT() {
                     </div>
                   </div>
                 </Link>
-                <Link href="/stablediffusion">
+                <Link href="/image-gen">
                   <div className="flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl">
                     <div>
                       <p className="text-lg text-center font-bold mt-1">
