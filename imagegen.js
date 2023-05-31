@@ -15,6 +15,69 @@ const ImageGen = () => {
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [editMode, setEditMode] = useState(false);
+  const [file, setFile] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
+  const [mask, setMask] = useState(null);
+  const [imageBuffer, setImageBuffer] = useState(null);
+
+  useEffect(() => {
+    const fetchMaskData = async () => {
+      setMask(await prepMask());
+    };
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImageUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
+
+      fetchMaskData();
+
+      if (imageUrl) {
+        const prepFile = async () => {
+          // fetch image file's base64 url encoding
+          const _base64Img = (await fetch(imageUrl)).url;
+
+          // send base64 image to my API router proxy and receive JSON containing buffer
+          const _pngBuffer = await fetch("/api/image-gen", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              base64Img: _base64Img,
+            }),
+          });
+
+          // add name attribute to json for OpenAI endpoint
+          const pngBuffer = await _pngBuffer.json();
+          pngBuffer.data.name = "img.png";
+
+          setImageBuffer(pngBuffer.data);
+        };
+
+        prepFile();
+      }
+    }
+  }, [file, imageUrl]);
+
+  useEffect(() => {
+    if (!editMode) {
+      setFile(null);
+      setImageUrl(null);
+      setImageBuffer(null);
+    }
+  }, [editMode]);
+
+  const prepMask = async () => {
+    // grab transparent square mask and convert to nodeJS Buffer
+    // shirking fs dependency for consistency and leanness
+    const res = await fetch(blank.blurDataURL);
+    const maskBuffer = new Buffer.from(res.url, "base64");
+    maskBuffer.name = "mask.png";
+
+    return maskBuffer;
+  };
 
   // post request to OpenAI for uploaded image prompts
   const onSubmit = async (e) => {
@@ -25,6 +88,8 @@ const ImageGen = () => {
     setPrediction(excited.blurDataURL);
 
     // grab images from state variables and prompt from input
+    const _imageBuffer = imageBuffer;
+    const _mask = mask;
     const _prompt = e.target.editprompt.value;
 
     // forward the prompt to my API router proxy
@@ -35,6 +100,8 @@ const ImageGen = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          imageBuffer: _imageBuffer,
+          mask: _mask,
           prompt: _prompt,
         }),
       });
@@ -81,6 +148,64 @@ const ImageGen = () => {
       )}
 
       <form className="mt-4" onSubmit={(e) => onSubmit(e)}>
+        {editMode && (
+          <div>
+            <div className="flex justify-center">
+              <input
+                className="mb-4 form-control block px-2 py-1.5 shadow-xl text-xl font-normal text-gray-500 bg-white bg-clip-padding border border-solid border-4 border-violet-200 rounded-2xl transition focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none hover:border-violet-400"
+                type="file"
+                name="upload"
+                accept="image/png, image/jpeg"
+                onChange={(e) => setFile(e.target.files[0])}
+              />
+            </div>
+            <p className="text-center text-xs text-gray-600">
+              Upload an image and then describe the desired end result in full,
+              emphasizing any changes
+            </p>
+            {imageUrl && (
+              <div className="my-4 flex justify-center">
+                <Image
+                  width={250}
+                  height={250}
+                  alt="Uploaded Image"
+                  src={imageUrl}
+                />
+              </div>
+            )}
+            <p className="flex justify-center mb-6 text-xs text-gray-600">
+              For a random variation, leave prompt blank
+            </p>
+          </div>
+        )}
+
+        <div className="flex justify-center mb-3 text-center text-base text-gray-800 font-medium">
+          <label className="ml-6 inline-flex items-center cursor-pointer">
+            <p className="mr-3 mx-auto whitespace-nowrap sm:text-lg font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
+              Toggle Edit Mode
+            </p>
+            <span className="relative">
+              <input
+                className="hidden sr-only"
+                label="toggle"
+                onClick={() => {
+                  setEditMode(!editMode);
+                }}
+              />
+              <span className="block w-10 h-6 bg-violet-200 rounded-full shadow-xl border-2 border-violet-400"></span>{" "}
+              <div
+                className={`toggle-dot absolute left-1 top-1 bg-sky-200 w-4 h-4 rounded-full transition-transform border-2 border-violet-300
+                    ${
+                      editMode
+                        ? "translate-x-4 border-sky-600 bg-sky-600"
+                        : "translate-x-0 border-sky-400"
+                    }
+                    `}
+              ></div>
+            </span>
+          </label>
+        </div>
+
         <div className="flex justify-center">
           <input
             className="p-3 rounded-full text-right border-2 border-violet-200 focus:border-none focus:outline-none focus:outline-[5px] focus:outline-violet-400 focus:animate-pulse hover:outline hover:outline-4 hover:outline-violet-200 shadow-xl"
@@ -112,7 +237,7 @@ const ImageGen = () => {
       {prediction && (
         <div className="flex justify-center mt-8">
           {prediction && (
-            <Image src={prediction} alt="AI image" width={1024} height={1024} />
+            <Image src={prediction} alt="output" width={1024} height={1024} />
           )}
         </div>
       )}
