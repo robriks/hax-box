@@ -8,7 +8,6 @@ import casey from "../public/casey.png";
 import mage from "../public/mage.png";
 import cleric from "../public/cleric.png";
 import warrior from "../public/warrior.png";
-import blank from "../public/transparent-square.png";
 import excited from "../public/excited-loading.gif";
 
 const ImageGen = () => {
@@ -18,12 +17,16 @@ const ImageGen = () => {
   const [editMode, setEditMode] = useState(false);
   const [file, setFile] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
-  const [mask, setMask] = useState(null);
+  const [maskBuffer, setMaskBuffer] = useState(null);
   const [imageBuffer, setImageBuffer] = useState(null);
 
   useEffect(() => {
-    const fetchMaskData = async () => {
-      setMask(await prepMask());
+    const bufferizeMask = async () => {
+      const res = await fetch("/transparent.png");
+      const maskBlob = await res.blob();
+      const _maskBuffer = Buffer.from(await maskBlob.arrayBuffer());
+
+      return _maskBuffer;
     };
 
     if (file) {
@@ -33,26 +36,15 @@ const ImageGen = () => {
       };
       reader.readAsDataURL(file);
 
-      fetchMaskData();
-
       if (imageUrl) {
         const prepFile = async () => {
+          // fetch mask buffer
+          const maskBuffer = await bufferizeMask();
           // fetch image file's base64 url encoding
           const _base64Img = (await fetch(imageUrl)).url;
+          const pngBuffer = await bufferize(_base64Img);
 
-          // send base64 image to my API router proxy and receive JSON containing buffer
-          const _pngBuffer = await fetch("/api/image-gen", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              base64Img: _base64Img,
-            }),
-          });
-
-          // add name attribute to json for OpenAI endpoint
-          const pngBuffer = await _pngBuffer.json();
-          pngBuffer.data.name = "img.png";
-
+          setMaskBuffer(maskBuffer);
           setImageBuffer(pngBuffer.data);
         };
 
@@ -69,14 +61,19 @@ const ImageGen = () => {
     }
   }, [editMode]);
 
-  const prepMask = async () => {
-    // grab transparent square mask and convert to nodeJS Buffer
-    // shirking fs dependency for consistency and leanness
-    const res = await fetch(blank.blurDataURL);
-    const maskBuffer = new Buffer.from(res.url, "base64");
-    maskBuffer.name = "mask.png";
+  const bufferize = async (b64Img) => {
+    // send base64 mask or image to my API router proxy and receive JSON containing buffer
+    const _pngBuffer = await fetch("/api/image-gen", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        base64Img: b64Img,
+      }),
+    });
 
-    return maskBuffer;
+    // add name attribute to json for OpenAI endpoint
+    const pngBuffer = await _pngBuffer.json();
+    return pngBuffer.data;
   };
 
   // post request to OpenAI for uploaded image prompts
@@ -89,7 +86,7 @@ const ImageGen = () => {
 
     // grab images from state variables and prompt from input
     const _imageBuffer = imageBuffer;
-    const _mask = mask;
+    const _maskBuffer = maskBuffer;
     const _prompt = e.target.editprompt.value;
 
     // forward the prompt to my API router proxy
@@ -101,7 +98,7 @@ const ImageGen = () => {
         },
         body: JSON.stringify({
           imageBuffer: _imageBuffer,
-          mask: _mask,
+          mask: _maskBuffer,
           prompt: _prompt,
         }),
       });
@@ -114,12 +111,7 @@ const ImageGen = () => {
       // Handle the response
       e.target.reset();
     } catch (error) {
-      if (error.response) {
-        console.log(error.response.status);
-        console.log(error.response.data);
-      } else {
-        console.log(error.message);
-      }
+      console.log(error);
     }
   };
 
@@ -237,7 +229,7 @@ const ImageGen = () => {
       {prediction && (
         <div className="flex justify-center mt-8">
           {prediction && (
-            <Image src={prediction} alt="output" width={1024} height={1024} />
+            <Image src={prediction} alt="output" width={512} height={512} />
           )}
         </div>
       )}
