@@ -33,8 +33,6 @@ export default async function handler(req, res) {
       size: _size,
     };
 
-    fs.createReadStream("/transparent-square.png");
-
     // use edits endpoint
     response = await openai.createImageEdit(
       body.image,
