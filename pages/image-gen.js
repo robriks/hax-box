@@ -240,8 +240,7 @@ const ImageGen = () => {
 
       <div className="justify-center text-center mt-10 p-6">
         <h2 className="text-xs mb-4 text-gray-500">
-          Looping output images as inputs to edit mode allows for fine-tuned
-          results:
+          Fine-tuned models can produce better results:
         </h2>
         <div className="flex place-content-center mb-4">
           <Image
