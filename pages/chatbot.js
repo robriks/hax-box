@@ -15,9 +15,7 @@ const Chatbot = () => {
   // state variable used to toggle Kerrigan KweenBirb's hooting
   const [toggleKerrigan, setToggleKerrigan] = useState(false);
 
-  useEffect(() => {
-    console.log(toggleKerrigan);
-  }, [toggleKerrigan]);
+  useEffect(() => {}, [toggleKerrigan]);
 
   const onSubmit = async (data, e) => {
     e.target.reset();
@@ -47,6 +45,7 @@ const Chatbot = () => {
         messages: messages,
         max_tokens: 4096,
         temperature: 0.7,
+        // stream: true,
       })
       .then((res) => {
         const msgs = {
