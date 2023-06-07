@@ -28,7 +28,7 @@ const wagmiClient = createClient({
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="min-h-screen h-auto align-content-center bg-hero-pattern bg-fixed bg-cover bg-no-repeat bg-right">
+    <div className="min-h-screen h-auto align-content-center bg-hero-pattern bg-fixed bg-cover bg-no-repeat bg-right dark:bg-gradient-radial from-slate-900 via-indigo-900 to-slate-900">
       <Head>
         <link rel="icon" href="9535.gif" type="image/gif" />
       </Head>

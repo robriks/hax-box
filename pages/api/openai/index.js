@@ -65,6 +65,7 @@ export default async function handler(req, res) {
   } else {
     console.log("error determining endpoint");
   }
+  console.log(response);
 
   // send the fetch response url back to frontend client
   // using shorthand for setting response content type to 'application/json'
