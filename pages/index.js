@@ -10,7 +10,6 @@ export default function Home() {
       <Head>
         <title>Markus&apos;s Personal Page</title>
       </Head>
-
       <section>
         <div className="mx-auto max-w-screen-xl lg:flex">
           <div className="mx-auto max-w-3xl text-center">
@@ -56,7 +55,7 @@ export default function Home() {
             />
           </a>
         </div>
-        <div className="hover:scale-110 max-w-sm max-h-sm p-6 py-2 rounded-3xl shadow-2xl bg-gradient-to-r from-blue-200 via-indigo-300 to-violet-400 border-4 border-indigo-300">
+        <div className="hover:scale-110 max-w-sm max-h-sm p-6 py-2 rounded-3xl shadow-2xl bg-gradient-to-r from-sky-300 via-indigo-400 to-violet-500 dark:bg-gradient-to-r dark:from-slate-700 dark:via-indigo-600 dark:to-violet-700 border-4 border-indigo-300">
           <Link href="/about">
             <a className="rounded-full">
               <h2 className="text-sm text-center italic font-bold leading-normal mb-2 mt-2">
@@ -80,7 +79,7 @@ export default function Home() {
           <div className="mx-auto sm:whitespace-nowrap text-center text[19px] sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
             While you&apos;re here,
           </div>
-          <p className="text-center text-sm text-gray-600">
+          <p className="text-center text-sm text-gray-600 dark:text-gray-300">
             &nbsp;have a look around! Turn a photo or video into an NFT using my
             <Link href="/nft">
               <a className="text-blue-500 hover:underline"> NFT generator,</a>

@@ -48,7 +48,7 @@ export default function NFT() {
         <div className="flex flex-wrap -m-4">
           <div className="p-4">
             <div className="flex rounded-lg h-full flex-col">
-              <h1 className="my-8 mb-6 text-center bg-gradient-to-r from-cyan-300 via-indigo-400 to-purple-900 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl sm:mb-10">
+              <h1 className="mx-auto my-8 mb-6 text-center bg-gradient-to-r from-sky-300 via-indigo-400 to-purple-900 dark:from-sky-400 dark:via-indigo-400 dark:to-purple-600 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl sm:mb-10">
                 Projects
               </h1>
               <div className="grid grid-cols-2 sm:grid-cols-3 items-center gap-2 mb-3">

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useTheme } from "next-themes";
 import { Configuration, OpenAIApi } from "openai";
 import styles from "../styles/Home.module.css";
 import Head from "next/head";
 import Image from "next/image";
 import kweenbirb from "../public/9535.gif";
+import kweenbirbDark from "../public/9535DM.png";
 
 const Chatbot = () => {
   const { register, handleSubmit } = useForm();
@@ -14,8 +16,12 @@ const Chatbot = () => {
   const [history, setHistory] = useState([]);
   // state variable used to toggle Kerrigan KweenBirb's hooting
   const [toggleKerrigan, setToggleKerrigan] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme } = useTheme();
 
-  useEffect(() => {}, [toggleKerrigan]);
+  useEffect(() => {
+    setMounted(true);
+  }, [toggleKerrigan]);
 
   const onSubmit = async (data, e) => {
     e.target.reset();
@@ -45,7 +51,6 @@ const Chatbot = () => {
         messages: messages,
         max_tokens: 4096,
         temperature: 0.7,
-        // stream: true,
       })
       .then((res) => {
         const msgs = {
@@ -184,13 +189,28 @@ const Chatbot = () => {
                   type="submit"
                   id="chat"
                 >
-                  <Image
-                    src={kweenbirb}
-                    alt="gif of KweenBirb saying gm"
-                    height="64"
-                    width="64"
-                    className="xs:flex-none rounded-full"
-                  />
+                  {mounted && theme === "light" && (
+                    <div>
+                      <Image
+                        src={kweenbirb}
+                        alt="gif of KweenBirb saying gm"
+                        height="64"
+                        width="64"
+                        className="xs:flex-none rounded-full"
+                      />
+                    </div>
+                  )}
+                  {mounted && theme === "dark" && (
+                    <div>
+                      <Image
+                        src={kweenbirbDark}
+                        alt="gif of KweenBirb saying gm"
+                        height="64"
+                        width="64"
+                        className="xs:flex-none rounded-full"
+                      />
+                    </div>
+                  )}
                 </button>
               </form>
             </div>

@@ -111,7 +111,7 @@ export default function GenerateNFT() {
                 Generate Your Own NFTs
               </h1>
               <div className="flex items-center place-self-center w-full backdrop-blur-xs rounded-3xl mt-8 sm:my-4 shadow-2xl">
-                <div className="text-[10px] font-medium text-gray-800 leading-snug whitespace-normal sm:text-base lg:text-lg">
+                <div className="text-[10px] font-medium text-gray-800 dark:text-white leading-snug whitespace-normal sm:text-base lg:text-lg">
                   <div className="object-contain flex-wrap m-3 sm:m-5">
                     <a className="text-[13px] sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
                       Mint custom content as NFTs&nbsp;
@@ -137,7 +137,7 @@ export default function GenerateNFT() {
                       </a>
                     </Link>
                     blockchains in three steps:
-                    <ul className="list-disc my-1 sm:my-4 sm:text-sm text-gray-800 font-normal">
+                    <ul className="list-disc my-1 sm:my-4 sm:text-sm text-gray-800 dark:text-white font-normal">
                       <p>
                         <a className="text-base text-violet-500">★&nbsp;</a>
                         Upload picture, video, or music
@@ -152,7 +152,7 @@ export default function GenerateNFT() {
                       </p>
                     </ul>
                     Protocol gas fees cost less than 10 cents!
-                    <p className="mt-2 shrink font-normal text-[10px] sm:text-xs text-gray-600">
+                    <p className="mt-2 shrink font-normal text-[10px] sm:text-xs text-gray-600 dark:text-gray-400">
                       These NFTs are&nbsp;
                       <Link href="https://polygon.technology/">
                         <a
@@ -178,7 +178,9 @@ export default function GenerateNFT() {
         <section className="flex justify-center mb-3">
           <div className="mt-8 mb-3 w-96 text-center">
             <p className="mb-5 text-[18px] sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
-              <a className="text-[18px] text-gray-800">1.&nbsp;&nbsp;</a>
+              <a className="text-[18px] text-gray-800 dark:text-white">
+                1.&nbsp;&nbsp;
+              </a>
               Upload a file (&nbsp;to IPFS&nbsp;)
             </p>
             <input
@@ -202,13 +204,15 @@ export default function GenerateNFT() {
         <section className="items-center">
           <div className="mt-8 text-center">
             <p className="mb-6 text-[18px] sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
-              <a className="text-[18px] text-gray-800">2.&nbsp;&nbsp;</a>
+              <a className="text-[18px] text-gray-800 dark:text-white">
+                2.&nbsp;&nbsp;
+              </a>
               Connect Web3 wallet
             </p>
             <div className="flex justify-center">
               <ConnectButton />
             </div>
-            <div className="mt-4 md:mt-6 text-sm text-gray-600">
+            <div className="mt-4 md:mt-6 text-sm text-gray-600 dark:text-gray-300">
               Any Web3 wallet will do, such as&nbsp;
               <Link href="https://metamask.io">
                 <a
@@ -230,7 +234,7 @@ export default function GenerateNFT() {
                 </a>
               </Link>
             </div>
-            <div className="mt-10 text-xs text-gray-500">
+            <div className="mt-10 text-xs text-gray-500 dark:text-gray-300">
               Confused?
               <p>
                 Complete my&nbsp;
@@ -250,7 +254,9 @@ export default function GenerateNFT() {
         <section className="items-center">
           <div className="mt-8 mb-3 text-center">
             <p className="mb-6 text-[18px] sm:text-lg lg:text-xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
-              <a className="text-[18px] text-gray-800">3.&nbsp;&nbsp;</a>
+              <a className="text-[18px] text-gray-800 dark:text-white">
+                3.&nbsp;&nbsp;
+              </a>
               Submit mint transaction
             </p>
             <div>
@@ -276,14 +282,14 @@ export default function GenerateNFT() {
                   </p>
                 </div>
               )}
-              <p className="mx-6 mt-4 md:mt-6 text-xs text-gray-500">
+              <p className="mx-6 mt-4 md:mt-6 text-xs text-gray-500 dark:text-gray-300">
                 To pay the protocol&apos;s gas fee, ensure you have at least
                 $0.10 worth of either $MATIC (on Polygon) or $ETH (on Arbitrum)
               </p>
             </div>
           </div>
         </section>
-        <section className="font-medium text-center text-xs sm:text-base md:text-lg text-gray-800">
+        <section className="font-medium text-center text-xs sm:text-base md:text-lg text-gray-800 dark:text-gray-300">
           <div className="md:mx-20 lg:mx-48">
             <p className="mx-4 mt-5">
               Check out these AI-generated portraits 👦🏻👦🏻 hosted on the Arweave
