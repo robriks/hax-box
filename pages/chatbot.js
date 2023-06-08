@@ -80,8 +80,8 @@ const Chatbot = () => {
             {history.map((item, i) => (
               <div className="space-y-4" key={i}>
                 <div className="flex w-full space-x-4">
-                  <div className="w-full ml-8 rounded-xl p-3 shadow-xl border-2 border-violet-300 bg-violet-100 text-gray-700 overflow-x-auto">
-                    <div className="w-14 shrink-0 p-1 mb-4 border-2 border-violet-500 bg-violet-400 rounded-full float-right shadow-xl">
+                  <div className="w-full ml-8 rounded-xl p-3 shadow-xl border-2 border-violet-300 bg-violet-100 text-gray-700 dark:border-violet-300 dark:bg-violet-600 dark:text-gray-100 overflow-x-auto">
+                    <div className="w-14 shrink-0 p-1 mb-4 border-2 border-violet-500 bg-violet-600 dark:border-violet-300 dark:bg-violet-400 rounded-full float-right shadow-xl">
                       <p className="text-center text-[11px] text-white font-semibold">
                         Human:&nbsp;
                       </p>
@@ -92,8 +92,8 @@ const Chatbot = () => {
                   </div>
                 </div>
                 <div className="flex w-full space-x-4">
-                  <div className="w-full mr-8 rounded-xl p-3 shadow-xl border-2 border-sky-300 bg-sky-100 text-gray-700 overflow-x-auto">
-                    <div className="w-14 shrink-0 p-1 mb-4 border-2 border-sky-500 bg-sky-400 rounded-full float-left shadow-xl">
+                  <div className="w-full mr-8 rounded-xl p-3 shadow-xl border-2 border-sky-300 bg-sky-100 text-gray-700 dark:border-sky-300 dark:bg-sky-600 dark:text-gray-100 overflow-x-auto">
+                    <div className="w-14 shrink-0 p-1 mb-4 border-2 border-sky-500 bg-sky-400 dark:border-sky-300 dark:bg-sky-400 rounded-full float-left shadow-xl">
                       <p className="text-center text-[11px] text-white font-semibold">
                         AI:&nbsp;
                       </p>
@@ -110,8 +110,8 @@ const Chatbot = () => {
             {Boolean(active) && (
               <div className="space-y-4">
                 <div className="flex w-full space-x-4">
-                  <div className="w-full ml-8 rounded-xl p-3 shadow-xl border-2 border-violet-300 bg-violet-100 text-gray-700 overflow-x-auto">
-                    <div className="w-14 shrink-0 p-1 mb-4 border-2 border-violet-500 bg-violet-400 rounded-full float-right shadow-xl">
+                  <div className="w-full ml-8 rounded-xl p-3 shadow-xl border-2 border-violet-300 bg-violet-100 text-gray-700 dark:border-violet-300 dark:bg-violet-600 dark:text-gray-100 overflow-x-auto">
+                    <div className="w-14 shrink-0 p-1 mb-4 border-2 border-violet-500 bg-violet-400 dark:border-violet-300 dark:bg-violet-400 rounded-full float-right shadow-xl">
                       <p className="text-center text-[11px] text-white font-semibold">
                         Human:&nbsp;
                       </p>
@@ -122,8 +122,8 @@ const Chatbot = () => {
                   </div>
                 </div>
                 <div className="flex w-full space-x-4">
-                  <div className="w-full mr-8 rounded-xl p-3 shadow-xl border-2 border-sky-300 bg-sky-100 text-gray-700 overflow-x-auto">
-                    <div className="w-14 shrink-0 p-1 mb-4 border-2 border-sky-500 bg-sky-400 rounded-full float-left shadow-xl">
+                  <div className="w-full mr-8 rounded-xl p-3 shadow-xl border-2 border-sky-300 bg-sky-100 text-gray-700 dark:border-sky-300 dark:bg-sky-600 dark:text-gray-100 overflow-x-auto">
+                    <div className="w-14 shrink-0 p-1 mb-4 border-2 border-sky-500 bg-sky-400 dark:border-sky-300 dark:bg-sky-400 rounded-full float-left shadow-xl">
                       <p className="text-center text-[11px] text-white font-semibold">
                         AI:&nbsp;
                       </p>
@@ -138,7 +138,7 @@ const Chatbot = () => {
           </div>
           <div className="mb-6 mt-6">
             {Boolean(loading) && (
-              <div className="flex relative justify-center w-1/2 rounded-xl p-3 px-4 mb-4 hover:animate-bounce animate-pulse bg-sky-400 border-2 border-sky-800 shadow-xl text-center text-white text-xs font-medium text-white">
+              <div className="flex relative justify-center w-1/2 rounded-xl p-3 px-4 mb-4 hover:animate-bounce animate-pulse bg-sky-400 border-2 border-sky-800 dark:border-sky-300 shadow-xl text-center text-white text-xs font-medium text-white">
                 AI fren in da kompooter is typing...
               </div>
             )}
@@ -146,7 +146,7 @@ const Chatbot = () => {
           <div className="mt-8 justify-center">
             <div className="flex justify-center mb-1 text-center text-xs text-gray-500 font-medium">
               <label className="ml-6 inline-flex items-center cursor-pointer">
-                <p className="mr-3 mx-auto whitespace-nowrap sm:text-sm font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
+                <p className="mr-3 mx-auto whitespace-nowrap sm:text-sm font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 dark:via-indigo-300 dark:to-purple-600 bg-clip-text text-transparent">
                   Toggle Moonbird Personality
                 </p>
                 <span className="relative">
@@ -181,7 +181,7 @@ const Chatbot = () => {
                   type="text"
                   placeholder="Ask GPT-4 AI anything!"
                   name="prompt"
-                  className="place-self-end px-3 mb-4 rounded-full text-right border-2 border-violet-200 focus:border-none focus:outline-none focus:outline-[5px] focus:outline-violet-400 focus:animate-pulse hover:outline hover:outline-4 hover:outline-violet-300 shadow-xl"
+                  className="place-self-end px-3 mb-4 rounded-full text-right dark:bg-indigo-300 dark:hover:bg-indigo-400 dark:focus:bg-indigo-400 dark:border-indigo-100 border-4 border-violet-400 hover:bg-violet-200 focus:bg-violet-200 focus:outline-none focus:border-4 focus:border-violet-500 focus:animate-pulse text-black shadow-xl"
                   id="chat"
                 />
                 <button
