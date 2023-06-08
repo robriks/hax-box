@@ -5,6 +5,7 @@ import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { goerli, arbitrum, polygon } from "wagmi/chains";
 import { infuraProvider } from "wagmi/providers/infura";
+import { ThemeProvider } from "next-themes";
 import Header from "../components/header.js";
 import Footer from "../components/footer.js";
 
@@ -34,9 +35,11 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider coolMode chains={chains}>
-          <Header />
-          <Component {...pageProps} />
-          <Footer />
+          <ThemeProvider attribute="class" enableSystem={false}>
+            <Header />
+            <Component {...pageProps} />
+            <Footer />
+          </ThemeProvider>
         </RainbowKitProvider>
       </WagmiConfig>
     </div>

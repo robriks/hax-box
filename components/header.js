@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ThemeToggle from "./theme-toggle";
 import BirbBanner from "../public/birb-banner.jpg";
 
 export default function Header() {
@@ -22,17 +23,7 @@ export default function Header() {
           </div>
         </nav>
       </header>
-      <span className="block w-10 h-6 bg-violet-200 rounded-full shadow-xl border-2 border-violet-400"></span>{" "}
-      <div
-        className={`toggle-dot absolute left-1 top-1 bg-sky-200 w-4 h-4 rounded-full transition-transform border-2 border-violet-300
-                    ${
-                      toggleKerrigan
-                        ? "translate-x-4 border-sky-600 bg-sky-600"
-                        : "translate-x-0 border-sky-400"
-                    }
-                    `}
-      ></div>
-      <div className="flex shrink justify-center w-auto">
+      <div className="flex shrink justify-center w-auto mt-2">
         <div className="bg-gradient-to-r from-cyan-300 via-indigo-400 to-purple-900 p-3 sm:p-4 md:p-6 shadow-2xl rounded-full border-4 border-indigo-400">
           <div className="flex whitespace-nowrap justify-items-stretch p-1 text-[11px] sm:text-lg space-x-3 sm:space-x-7 md:space-x-10 w-auto text-white font-bold">
             <Link href="/">
@@ -55,6 +46,9 @@ export default function Header() {
             </Link>
           </div>
         </div>
+      </div>
+      <div className="flex float-right w-1/2 sm:w-1/3 md:w-1/3 md:mr-8 lg:w-1/3 lg:mr-20 mt-6">
+        <ThemeToggle />
       </div>
     </div>
   );
