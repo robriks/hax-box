@@ -134,7 +134,7 @@ const ImageGen = () => {
           <div className="place-self-center backdrop-blur-xs rounded-3xl sm:mx-4 sm:my-4 md:mx-12 lg:mx-48 shadow-xl">
             <div className="p-4 mx-auto sm:whitespace-nowrap text-center text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
               Edit Mode
-              <p className="text-center text-xs font-medium text-gray-600 whitespace-normal">
+              <p className="text-center text-xs font-medium text-gray-600 dark:text-gray-300 whitespace-normal">
                 Create new variations from your own images. Variations can be
                 random or you may provide a text prompt for more precise changes
               </p>
@@ -155,7 +155,7 @@ const ImageGen = () => {
                 onChange={(e) => setFile(e.target.files[0])}
               />
             </div>
-            <p className="text-center text-xs text-gray-600">
+            <p className="text-center text-xs text-gray-600 dark:text-gray-300">
               Upload an image and then describe the desired end result in full,
               emphasizing any changes
             </p>
@@ -169,7 +169,7 @@ const ImageGen = () => {
                 />
               </div>
             )}
-            <p className="flex justify-center mb-6 text-xs text-gray-600">
+            <p className="flex justify-center mb-6 text-xs text-gray-600 dark:text-gray-300">
               For a random variation, leave prompt blank
             </p>
           </div>
@@ -239,7 +239,7 @@ const ImageGen = () => {
       )}
 
       <div className="justify-center text-center mt-10 p-6">
-        <h2 className="text-xs mb-4 text-gray-500">
+        <h2 className="text-xs mb-4 text-gray-500 dark:text-gray-300">
           Fine-tuned models can produce better results:
         </h2>
         <div className="flex place-content-center mb-4">
