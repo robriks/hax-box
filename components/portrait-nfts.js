@@ -2,7 +2,6 @@ import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
 
 import { portraitsAddress } from '../config.js';
 import Portraits from '../src/Prince.json';
