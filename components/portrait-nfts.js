@@ -38,7 +38,13 @@ export default function LoadPortraitNFTs() {
                 <div className="flex place-content-center space-x-2 sm:space-x-4">
                     {nfts.map((nft, i) => (
                         <div key={i} className="place-self-center w-40 sm:w-56">
-                            <img className="rounded-2xl object-contain" alt="AI Portrait NFTs" layout='fill' src={nft} />
+                            <Image
+                                className="rounded-2xl object-contain"
+                                alt="AI Portrait NFTs"
+                                height="256"
+                                width="256"
+                                src={nft}
+                            />
                         </div>
                     )
                     )}
