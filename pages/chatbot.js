@@ -25,20 +25,21 @@ const Chatbot = () => {
   }, [toggleKerrigan]);
 
   const onSubmit = async (data, e) => {
-    const prompt = e.target.value;
+    const _prompt = e.target.value;
     e.target.value = '';
     resizeTextarea(e);
 
-    const OPENAI_API_TOKEN = process.env.OPENAI_API_TOKEN;
-    const configuration = new Configuration({
-      apiKey: OPENAI_API_TOKEN,
-    });
-    const openai = new OpenAIApi(configuration);
+    // const OPENAI_API_TOKEN = process.env.OPENAI_API_TOKEN;
+    // const configuration = new Configuration({
+    //   apiKey: OPENAI_API_TOKEN,
+    // });
+    // const openai = new OpenAIApi(configuration);
+
     // set loading state to true to initialize
     setLoading(true);
 
     // conditionally include system message via array.unshift() based on toggle state
-    const messages = [{ role: "user", content: prompt }];
+    const messages = [{ role: "user", content: _prompt }];
     if (toggleKerrigan) {
       messages.unshift({
         role: "system",
@@ -48,24 +49,42 @@ const Chatbot = () => {
     }
 
     // make the post request
-    const response = await openai
-      .createChatCompletion({
-        model: "gpt-4",
-        messages: messages,
-        max_tokens: 4096,
-        temperature: 0.7,
+    // const response = await openai
+    //   .createChatCompletion({
+    //     model: "gpt-4",
+    //     messages: messages,
+    //     max_tokens: 4096,
+    //     temperature: 0.7,
+    //   })
+    try {
+      const response = await fetch("/api/openai/text", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(messages),
       })
-      .then((res) => {
-        const msgs = {
-          input: prompt,
-          output: res.data.choices[0].message.content,
-        };
-        setActive(msgs);
-        setConversation([...conversation, msgs]);
-        setHistory(conversation);
-        // Reset loading state to false after request to clear animation
-        setLoading(false);
-      });
+
+      const _answer = await response.json();
+
+      const msgs = {
+        input: _prompt,
+        output: _answer.data,
+      };
+
+      setActive(msgs);
+      setConversation([...conversation, msgs]);
+      setHistory(conversation);
+      // Reset loading state to false after request to clear animation
+      setLoading(false);
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.status);
+        console.log(error.response.data);
+      } else {
+        console.log(error.message);
+      }
+    }
   };
 
   const resizeTextarea = (e) => {
