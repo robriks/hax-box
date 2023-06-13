@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  compiler: {
+    // enable styled-components SWC transform to resolve client-server mismatch on conditional rendering
+    styledComponents: true
+  },
   images: {
     domains: [
       "replicate.com",

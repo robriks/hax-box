@@ -88,9 +88,12 @@ const ImageGen = () => {
     const _maskBuffer = maskBuffer;
     const _prompt = e.target.editprompt.value;
 
+    // clear input
+    e.target.reset();
+
     // forward the prompt to my API router proxy
     try {
-      const response = await fetch("/api/openai", {
+      const response = await fetch("/api/openai/images", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -191,11 +194,10 @@ const ImageGen = () => {
               <span className="block w-10 h-6 bg-violet-200 rounded-full shadow-xl border-2 border-violet-400"></span>{" "}
               <div
                 className={`toggle-dot absolute left-1 top-1 bg-sky-200 w-4 h-4 rounded-full transition-transform border-2 border-violet-300
-                    ${
-                      editMode
-                        ? "translate-x-4 border-sky-600 bg-sky-600"
-                        : "translate-x-0 border-sky-400"
-                    }
+                    ${editMode
+                    ? "translate-x-4 border-sky-600 bg-sky-600"
+                    : "translate-x-0 border-sky-400"
+                  }
                     `}
               ></div>
             </span>
@@ -204,10 +206,10 @@ const ImageGen = () => {
 
         <div className="flex justify-center text-black">
           <input
-            className="p-3 rounded-full text-right border-2 border-violet-200 focus:border-none focus:outline-none focus:outline-[5px] focus:outline-violet-400 focus:animate-pulse hover:outline hover:outline-4 hover:outline-violet-200 shadow-xl"
+            className="p-3 rounded-full text-right dark:text-black border-2 border-violet-200 focus:border-none focus:outline-none focus:outline-[5px] focus:outline-violet-400 focus:animate-pulse hover:outline hover:outline-4 hover:outline-violet-200 shadow-xl"
             type="text"
             name="editprompt"
-            placeholder="Describe an image to the AI!"
+            placeholder="Describe an image"
           />
           <button
             className="ml-4 rounded-full bg-gradient-to-r from-sky-300 via-indigo-400 to-purple-700 shadow-xl text-white p-2 border-2 border-violet-300 hover:outline hover:outline-4 hover:outline-violet-200 hover:animate-bounce hover:from-sky-500 hover:via-indigo-600 hover:to-purple-900"
