@@ -24,8 +24,8 @@ const Chatbot = () => {
   }, [toggleKerrigan]);
 
   const onSubmit = async (data, e) => {
-    const _prompt = e.target.value;
-    e.target.value = '';
+    const _prompt = ref.current.value;
+    ref.current.value = '';
     resizeTextarea(e);
 
     // set loading state to true to initialize
@@ -53,6 +53,10 @@ const Chatbot = () => {
         },
         body: JSON.stringify(messages),
       })
+
+      if (response.status !== 200) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
 
       const _answer = await response.json();
 
@@ -113,7 +117,7 @@ const Chatbot = () => {
                       <p className="text-center text-[11px] text-white font-semibold"> {i % 2 === 0 ? "Human" : "AI"}:&nbsp; </p>
                     </div>
                     <div className="mx-4 mt-12 sm:mt-16">
-                      <p className="font-medium">{item?.content}</p>
+                      <p className="whitespace-pre-wrap font-medium">{item?.content}</p>
                     </div>
                   </div>
                 </div>
@@ -131,7 +135,7 @@ const Chatbot = () => {
                       </p>
                     </div>
                     <div className="mx-4 mt-12 sm:mt-16">
-                      <p className="font-medium">{active[0].content}</p>
+                      <p className="whitespace-pre-wrap font-medium">{active[0].content}</p>
                     </div>
                   </div>
                 </div>
@@ -143,7 +147,7 @@ const Chatbot = () => {
                       </p>
                     </div>
                     <div className="mx-4 mt-12 sm:mt-16">
-                      <p className="font-medium">{active[1].content}</p>
+                      <p className="whitespace-pre-wrap font-medium">{active[1].content}</p>
                     </div>
                   </div>
                 </div>
@@ -211,6 +215,7 @@ const Chatbot = () => {
                 className="xs:flex-none place-self-center ml-3 min-w-max rounded-full drop-shadow-xl cursor-pointer hover:scale-125 ease-in duration-150 focus:outline-none drop-shadow-xl"
                 type="submit"
                 id="chat-button"
+                onClick={handleSubmit(onSubmit)}
               >
                 {mounted && theme === "light" && (
                   <div>
