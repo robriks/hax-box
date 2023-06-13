@@ -16,17 +16,27 @@ export default function Footer() {
       <div className="flex justify-center">
         <div className="p-4">
           <a href="https://github.com/robriks/HuskyCoin">
-            <Image alt="Github Logo" src={githubLogo} />
+            <Image alt="Github Logo" src={githubLogo} width={32} height={32} />
           </a>
         </div>
         <div className="p-4">
           <a href="https://twitter.com/marsterlund">
-            <Image alt="Twitter Logo" src={twitterLogo} />
+            <Image
+              alt="Twitter Logo"
+              src={twitterLogo}
+              width={32}
+              height={32}
+            />
           </a>
         </div>
         <div className="p-4">
           <a href="https://instagram.com/marsterlund">
-            <Image alt="Instagram Logo" src={instagramLogo} />
+            <Image
+              alt="Instagram Logo"
+              src={instagramLogo}
+              width={32}
+              height={32}
+            />
           </a>
         </div>
       </div>
