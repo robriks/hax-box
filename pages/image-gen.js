@@ -202,7 +202,7 @@ const ImageGen = () => {
           </label>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center text-black">
           <input
             className="p-3 rounded-full text-right border-2 border-violet-200 focus:border-none focus:outline-none focus:outline-[5px] focus:outline-violet-400 focus:animate-pulse hover:outline hover:outline-4 hover:outline-violet-200 shadow-xl"
             type="text"
