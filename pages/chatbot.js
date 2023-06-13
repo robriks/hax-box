@@ -25,14 +25,14 @@ const Chatbot = () => {
 
   const onSubmit = async (data, e) => {
     const _prompt = ref.current.value;
-    ref.current.value = '';
+    ref.current.value = "";
     resizeTextarea(e);
 
     // set loading state to true to initialize
     setLoading(true);
 
     // prepend conversation context
-    const current = { role: "user", content: _prompt }
+    const current = { role: "user", content: _prompt };
     const messages = [...conversation, current];
 
     // conditionally include system message via array.unshift() based on toggle state
@@ -52,7 +52,7 @@ const Chatbot = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(messages),
-      })
+      });
 
       if (response.status !== 200) {
         throw new Error(`Request failed with status ${response.status}`);
@@ -62,7 +62,7 @@ const Chatbot = () => {
 
       const msgs = [
         { role: "user", content: _prompt },
-        { role: "assistant", content: _answer.data }
+        { role: "assistant", content: _answer.data },
       ];
 
       setActive(msgs);
@@ -84,10 +84,10 @@ const Chatbot = () => {
     const element = ref.current;
 
     if (element?.style) {
-      ref.current.style.height = 'auto';
+      ref.current.style.height = "auto";
       ref.current.style.height = `${e.target.scrollHeight}px`;
     }
-  }
+  };
 
   return (
     <div className={styles.container}>
@@ -104,20 +104,34 @@ const Chatbot = () => {
             {history.map((item, i) => (
               <div className="space-y-4" key={i}>
                 <div className="flex w-full space-x-4">
-                  <div className={`w-full ${i % 2 === 0 ? "ml-8" : "mr-8"} rounded-xl p-3 shadow-xl 
-                  ${i % 2 === 0
+                  <div
+                    className={`w-full ${
+                      i % 2 === 0 ? "ml-8" : "mr-8"
+                    } rounded-xl p-3 shadow-xl 
+                  ${
+                    i % 2 === 0
                       ? "border-2 border-violet-300 bg-violet-100 text-gray-700 dark:border-violet-300 dark:bg-violet-600 dark:text-gray-100"
-                      : "border-2 border-sky-300 bg-sky-100 text-gray-700 dark:border-sky-300 dark:bg-sky-600 dark:text-gray-100"} overflow-x-auto`}
+                      : "border-2 border-sky-300 bg-sky-100 text-gray-700 dark:border-sky-300 dark:bg-sky-600 dark:text-gray-100"
+                  } overflow-x-auto`}
                   >
-                    <div className={`w-14 shrink-0 p-1 mb-4 
-                    ${i % 2 === 0
+                    <div
+                      className={`w-14 shrink-0 p-1 mb-4 
+                    ${
+                      i % 2 === 0
                         ? "border-2 border-violet-500 bg-violet-400 dark:border-violet-300 dark:bg-violet-400"
-                        : "border-2 border-sky-500 bg-sky-400 dark:border-sky-300 dark:bg-sky-400"} rounded-full 
-                    ${i % 2 === 0 ? "float-right" : "float-left"} shadow-xl`} >
-                      <p className="text-center text-[11px] text-white font-semibold"> {i % 2 === 0 ? "Human" : "AI"}:&nbsp; </p>
+                        : "border-2 border-sky-500 bg-sky-400 dark:border-sky-300 dark:bg-sky-400"
+                    } rounded-full 
+                    ${i % 2 === 0 ? "float-right" : "float-left"} shadow-xl`}
+                    >
+                      <p className="text-center text-[11px] text-white font-semibold">
+                        {" "}
+                        {i % 2 === 0 ? "Human" : "AI"}:&nbsp;{" "}
+                      </p>
                     </div>
                     <div className="mx-4 mt-12 sm:mt-16">
-                      <p className="whitespace-pre-wrap font-medium">{item?.content}</p>
+                      <p className="whitespace-pre-wrap font-medium">
+                        {item?.content}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -135,7 +149,9 @@ const Chatbot = () => {
                       </p>
                     </div>
                     <div className="mx-4 mt-12 sm:mt-16">
-                      <p className="whitespace-pre-wrap font-medium">{active[0].content}</p>
+                      <p className="whitespace-pre-wrap font-medium">
+                        {active[0].content}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -147,7 +163,9 @@ const Chatbot = () => {
                       </p>
                     </div>
                     <div className="mx-4 mt-12 sm:mt-16">
-                      <p className="whitespace-pre-wrap font-medium">{active[1].content}</p>
+                      <p className="whitespace-pre-wrap font-medium">
+                        {active[1].content}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -175,13 +193,14 @@ const Chatbot = () => {
                       setToggleKerrigan(!toggleKerrigan);
                     }}
                   />
-                  <span className="block w-10 h-6 bg-violet-200 rounded-full shadow-xl border-2 border-violet-400"></span>{" "}
+                  <span className="block w-10 h-6 bg-violet-300 rounded-full shadow-xl border-2 border-violet-400"></span>{" "}
                   <div
                     className={`toggle-dot absolute left-1 top-1 bg-sky-200 w-4 h-4 rounded-full transition-transform border-2 border-violet-300
-                    ${mounted && toggleKerrigan
+                    ${
+                      mounted && toggleKerrigan
                         ? "translate-x-4 border-sky-600 bg-sky-600"
                         : "translate-x-0 border-sky-400"
-                      }
+                    }
                     `}
                   ></div>
                 </span>
