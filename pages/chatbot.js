@@ -54,6 +54,10 @@ const Chatbot = () => {
         body: JSON.stringify(messages),
       })
 
+      if (response.status !== 200) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
       const _answer = await response.json();
 
       const msgs = [

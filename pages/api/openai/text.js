@@ -19,5 +19,5 @@ export default async function handler(req, res) {
 
     // send the fetch response url back to frontend client
     // using shorthand for setting response content type to 'application/json'
-    res.status(200).json({ data: response?.data?.choices[0]?.message.content }); //data: response?.data?.data[0] });
+    res.status(200).json({ data: response?.data?.choices[0]?.message.content });
 }
