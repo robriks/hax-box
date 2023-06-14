@@ -105,6 +105,10 @@ const ImageGen = () => {
         }),
       });
 
+      if (response.status !== 200) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
       const _prediction = await response.json();
 
       setPrediction(_prediction.data);
