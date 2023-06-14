@@ -24,8 +24,8 @@ const Chatbot = () => {
   }, [toggleKerrigan]);
 
   const onSubmit = async (data, e) => {
-    const _prompt = e.target.value;
-    e.target.value = '';
+    const _prompt = ref.current.value;
+    ref.current.value = '';
     resizeTextarea(e);
 
     // set loading state to true to initialize
@@ -215,6 +215,7 @@ const Chatbot = () => {
                 className="xs:flex-none place-self-center ml-3 min-w-max rounded-full drop-shadow-xl cursor-pointer hover:scale-125 ease-in duration-150 focus:outline-none drop-shadow-xl"
                 type="submit"
                 id="chat-button"
+                onClick={handleSubmit(onSubmit)}
               >
                 {mounted && theme === "light" && (
                   <div>
