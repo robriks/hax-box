@@ -195,20 +195,21 @@ const ImageGen = () => {
                   setEditMode(!editMode);
                 }}
               />
-              <span className="block w-10 h-6 bg-violet-200 rounded-full shadow-xl border-2 border-violet-400"></span>{" "}
+              <span className="block w-10 h-6 bg-violet-300 rounded-full shadow-xl border-2 border-violet-400"></span>{" "}
               <div
                 className={`toggle-dot absolute left-1 top-1 bg-sky-200 w-4 h-4 rounded-full transition-transform border-2 border-violet-300
-                    ${editMode
-                    ? "translate-x-4 border-sky-600 bg-sky-600"
-                    : "translate-x-0 border-sky-400"
-                  }
+                    ${
+                      editMode
+                        ? "translate-x-4 border-sky-600 bg-sky-600"
+                        : "translate-x-0 border-sky-400"
+                    }
                     `}
               ></div>
             </span>
           </label>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center text-black">
           <input
             className="p-3 rounded-full text-right dark:text-black border-2 border-violet-200 focus:border-none focus:outline-none focus:outline-[5px] focus:outline-violet-400 focus:animate-pulse hover:outline hover:outline-4 hover:outline-violet-200 shadow-xl"
             type="text"

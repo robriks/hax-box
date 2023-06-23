@@ -20,16 +20,19 @@ export default function ThemeToggle() {
             className="hidden sr-only"
             label="toggle"
             onClick={() => {
-              mounted && theme === "dark" ? setTheme("light") : setTheme("dark");
+              mounted && theme === "dark"
+                ? setTheme("light")
+                : setTheme("dark");
             }}
           />
           <span className="block w-10 h-6 bg-violet-300 rounded-full shadow-xl border-2 border-violet-400"></span>{" "}
           <div
             className={`toggle-dot absolute left-1 top-1 bg-sky-200 w-4 h-4 rounded-full transition-transform border-2 border-violet-300
-                    ${mounted && theme === "dark"
-                ? "translate-x-4 border-sky-600 bg-sky-600"
-                : "translate-x-0 border-sky-400"
-              }
+                    ${
+                      mounted && theme === "dark"
+                        ? "translate-x-4 border-sky-600 bg-sky-600"
+                        : "translate-x-0 border-sky-400"
+                    }
                     `}
           ></div>
         </span>
