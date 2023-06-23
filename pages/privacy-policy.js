@@ -1,4 +1,5 @@
-/* Privacy Policy for [Your Website Name]
+/* 
+Privacy Policy for [Your Website Name]
 
 Last updated: [Date]
 
