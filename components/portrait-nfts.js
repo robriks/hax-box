@@ -1,12 +1,6 @@
-import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
-
-import { portraitsAddress } from '../config.js';
-import Portraits from '../src/Prince.json';
-
-const apiKey = process.env.INFURA_ID;
 
 export default function LoadPortraitNFTs() {
     const [nfts, setNfts] = useState([])
@@ -17,16 +11,7 @@ export default function LoadPortraitNFTs() {
     }, [])
 
     async function loadNFTs() {
-        const provider = new ethers.providers.JsonRpcProvider(`https://polygon-mainnet.infura.io/v3/${apiKey}`)
-        const portraitsContract = new ethers.Contract(portraitsAddress, Portraits.abi, provider)
-        let items = []
-        for (let i = 1; i < 3; i++) {
-            let metadata1 = await portraitsContract.tokenURI(i)
-            metadata1 = await axios.get('https://arweave.net/' + metadata1.slice(5))
-            const portrait = 'https://arweave.net/' + metadata1.data.image.slice(5)
-            items.push(portrait)
-        }
-
+        const res = await axios.get('/api/nft/loadNFTs');
         setNfts(items)
         setLoadingState('loaded')
     }
