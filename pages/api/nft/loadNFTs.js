@@ -12,8 +12,9 @@ export default async function handler(req, res) {
     let items = [];
     const promises = Array.from({ length: 2 }).map(async (value, i) => {
         let metadata1 = await portraitsContract.tokenURI(i + 1);
-        metadata1 = await axios.get(`https://arweave.net/${metadata1.image.slice(5)}`);
-        return `https://arweave.net/${metadata1.data.image.slice(5)}`;
+        const arHash = metadata1.toString().slice(5);
+        const json = await axios.get(`https://arweave.net/${arHash}`);
+        return `https://arweave.net/${json.data.image.slice(5)}`;
     });
 
     items = await Promise.all(promises);

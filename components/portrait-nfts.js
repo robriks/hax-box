@@ -12,7 +12,8 @@ export default function LoadPortraitNFTs() {
 
     async function loadNFTs() {
         const res = await axios.get('/api/nft/loadNFTs');
-        setNfts(items)
+        // console.log(res); return;
+        setNfts(res.data)
         setLoadingState('loaded')
     }
 
@@ -34,6 +35,6 @@ export default function LoadPortraitNFTs() {
                     )}
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
