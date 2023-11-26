@@ -1,8 +1,9 @@
 import Head from "next/head";
+// import Link from "next/link";
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
-import { configureChains, createClient, WagmiConfig } from "wagmi";
+import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { goerli, arbitrum, polygon } from "wagmi/chains";
 import { infuraProvider } from "wagmi/providers/infura";
 import { ThemeProvider } from "next-themes";
@@ -10,21 +11,24 @@ import Header from "../components/header.js";
 import Footer from "../components/footer.js";
 
 const infuraId = process.env.INFURA_ID;
+const projectId = process.env.PROJECT_ID;
 
-const { chains, provider } = configureChains(
+const { chains, publicClient } = configureChains(
   [polygon, arbitrum, goerli],
   [infuraProvider({ apiKey: infuraId })]
 );
 
 const { connectors } = getDefaultWallets({
   appName: "My RainbowKit App",
+  projectId: projectId,
   chains,
 });
 
-const wagmiClient = createClient({
+const wagmiConfig = createConfig({
   autoConnect: true,
+  projectId: projectId,
   connectors,
-  provider,
+  publicClient,
 });
 
 function MyApp({ Component, pageProps }) {
@@ -33,7 +37,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <link rel="icon" href="9535.gif" type="image/gif" />
       </Head>
-      <WagmiConfig client={wagmiClient}>
+      <WagmiConfig config={wagmiConfig}>
         <RainbowKitProvider coolMode chains={chains}>
           <ThemeProvider attribute="class" enableSystem={false}>
             <Header />
