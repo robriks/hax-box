@@ -117,24 +117,24 @@ export default function GenerateNFT() {
                       Mint custom content as NFTs&nbsp;
                     </a>
                     on Ethereum&apos;s&nbsp;
-                    <Link href="https://polygon.technology/">
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:underline"
-                      >
+                    <Link
+                      href="https://polygon.technology/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline">
+                      
                         Polygon&nbsp;
-                      </a>
+                      
                     </Link>
                     or&nbsp;
-                    <Link href="https://arbitrum.io/">
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:underline"
-                      >
+                    <Link
+                      href="https://arbitrum.io/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline">
+                      
                         Arbitrum&nbsp;
-                      </a>
+                      
                     </Link>
                     blockchains in three steps:
                     <ul className="list-disc my-1 sm:my-4 sm:text-sm text-gray-800 dark:text-white font-normal">
@@ -154,14 +154,14 @@ export default function GenerateNFT() {
                     Protocol gas fees cost less than 10 cents!
                     <p className="mt-2 shrink font-normal text-[10px] sm:text-xs text-gray-600 dark:text-gray-400">
                       These NFTs are&nbsp;
-                      <Link href="https://polygon.technology/">
-                        <a
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-blue-600 hover:underline"
-                        >
+                      <Link
+                        href="https://polygon.technology/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline">
+                        
                           hosted on IPFS
-                        </a>
+                        
                       </Link>
                       &nbsp;and minted as a unique tokenId by a generic smart
                       contract I&apos;ve already coded and deployed.
@@ -214,38 +214,38 @@ export default function GenerateNFT() {
             </div>
             <div className="mt-4 md:mt-6 text-sm text-gray-600 dark:text-gray-300">
               Any Web3 wallet will do, such as&nbsp;
-              <Link href="https://metamask.io">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline"
-                >
+              <Link
+                href="https://metamask.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline">
+                
                   Metamask
-                </a>
+                
               </Link>
               &nbsp;or&nbsp;
-              <Link href="https://www.coinbase.com/wallet">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline"
-                >
+              <Link
+                href="https://www.coinbase.com/wallet"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline">
+                
                   Coinbase Wallet
-                </a>
+                
               </Link>
             </div>
             <div className="mt-10 text-xs text-gray-500 dark:text-gray-300">
               Confused?
               <p>
                 Complete my&nbsp;
-                <Link href="https://www.coinbase.com/wallet">
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-500 hover:underline"
-                  >
+                <Link
+                  href="https://www.coinbase.com/wallet"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline">
+                  
                     Web3 tutorial: HuskyCoin
-                  </a>
+                  
                 </Link>
               </p>
             </div>

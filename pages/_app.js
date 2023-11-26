@@ -1,5 +1,4 @@
 import Head from "next/head";
-// import Link from "next/link";
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
@@ -11,7 +10,7 @@ import Header from "../components/header.js";
 import Footer from "../components/footer.js";
 
 const infuraId = process.env.INFURA_ID;
-const projectId = process.env.PROJECT_ID;
+const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
 
 const { chains, publicClient } = configureChains(
   [polygon, arbitrum, goerli],

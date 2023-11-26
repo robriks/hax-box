@@ -12,7 +12,7 @@ export default function NFT() {
       </Head>
 
       <div className="justify-center sm:flex">
-        <div className="relative flex p-6 rounded-3xl shadow-2xl">
+        <div className="relative flex sm:p-24 p-52 rounded-3xl shadow-2xl">
           {/* img is originally 1080 * 1350 */}
           <div className="max-w-xs min-w-fit">
             <Image
@@ -22,7 +22,7 @@ export default function NFT() {
               className="rounded-3xl"
             />
           </div>
-          <h1 className="max-w-md backdrop-blur-md absolute flex px-2 py-1 sm:p-3 md:px-2 md:py-5 lg:px-4 lg:py-7 rounded-xl sm:rounded-2xl whitespace-nowrap text-violet-100 text-[15px] sm:text-xs md:text-[18px] lg:text-[24px] font-extrabold leading-9 top-3/4 sm:top-2/3 left-1/2 -translate-x-1/2">
+          <h1 className="max-w-md backdrop-blur-md absolute flex px-4 py-2 mt-4 sm:p-3 md:px-2 md:py-3 lg:px-2 lg:py-4 rounded-xl sm:rounded-2xl whitespace-nowrap text-violet-100 text-[25px] sm:text-xs md:text-[15px] lg:text-[16px] font-extrabold leading-9 top-3/4 sm:top-2/3 left-1/2 -translate-x-1/2">
             About Markus Osterlund
           </h1>
         </div>
@@ -52,7 +52,7 @@ export default function NFT() {
                 Projects
               </h1>
               <div className="grid grid-cols-2 sm:grid-cols-3 items-center gap-2 mb-3">
-                <Link href="/chatbot">
+                <Link href="/chatbot" legacyBehavior>
                   <div className="flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl">
                     <div>
                       <p className="text-lg text-center font-bold mt-1">
@@ -67,7 +67,7 @@ export default function NFT() {
                     </div>
                   </div>
                 </Link>
-                <Link href="/image-gen">
+                <Link href="/image-gen" legacyBehavior>
                   <div className="flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl">
                     <div>
                       <p className="text-lg text-center font-bold mt-1">
@@ -82,7 +82,7 @@ export default function NFT() {
                     </div>
                   </div>
                 </Link>
-                <Link href="/nft">
+                <Link href="/nft" legacyBehavior>
                   <div className="flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl">
                     <div>
                       <p className="text-lg text-center font-bold">🦄 🐒</p>
@@ -96,7 +96,7 @@ export default function NFT() {
                     </div>
                   </div>
                 </Link>
-                <Link href="https://huskycoin.vercel.app">
+                <Link href="https://huskycoin.vercel.app" legacyBehavior>
                   <div className="flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl">
                     <div>
                       <p className="text-lg text-center font-extrabold text-orange-400">
@@ -111,7 +111,9 @@ export default function NFT() {
                     </div>
                   </div>
                 </Link>
-                <Link href="https://mirror.xyz/0x65b54a4646369d8ad83cb58a5a6b39f22fcd8cee">
+                <Link
+                  href="https://mirror.xyz/0x65b54a4646369d8ad83cb58a5a6b39f22fcd8cee"
+                  legacyBehavior>
                   <div className="flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl">
                     <div>
                       <p className="text-lg text-center font-bold">⛓️ 📝</p>
@@ -125,7 +127,7 @@ export default function NFT() {
                     </div>
                   </div>
                 </Link>
-                <Link href="https://github.com/robriks/ethernaut-solutions">
+                <Link href="https://github.com/robriks/ethernaut-solutions" legacyBehavior>
                   <div className="flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl">
                     <div>
                       <p className="text-lg text-center font-bold">🧑🏻‍💻</p>
