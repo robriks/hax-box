@@ -58,6 +58,7 @@ export default function GenerateNFT() {
       const parameter = "ipfs://" + nft.path;
       setToChain(parameter);
     } catch (err) {
+      // for debugging
       console.log(err);
     }
   }
