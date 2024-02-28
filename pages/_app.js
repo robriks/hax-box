@@ -1,20 +1,9 @@
 import Head from "next/head";
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
-import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { goerli, arbitrum, polygon } from "wagmi/chains";
-import { infuraProvider } from "wagmi/providers/infura";
 import { ThemeProvider } from "next-themes";
 import Header from "../components/header.js";
 import Footer from "../components/footer.js";
-
-const infuraId = process.env.INFURA_ID;
-const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
-
-const { chains, publicClient } = configureChains(
-  [polygon, arbitrum, goerli],
-  [infuraProvider({ apiKey: infuraId })]
-);
 
 function MyApp({ Component, pageProps }) {
   return (
