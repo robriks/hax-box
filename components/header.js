@@ -11,13 +11,11 @@ export default function Header() {
           <div className="flow-root mt-2">
             <div className="flex justify-center place-content-center rounded-full">
               <Link href="/" className="max-w-md rounded-full drop-shadow-xl">
-
                 <Image
                   src={BirbBanner}
                   className="rounded-full"
                   alt="KweenBirb header banner"
                 ></Image>
-
               </Link>
             </div>
           </div>
@@ -34,11 +32,9 @@ export default function Header() {
             </Link>
             <Link
               href="https://mirror.xyz/0x65b54a4646369d8ad83cb58a5a6b39f22fcd8cee"
-              className="nav-link hover:underline">
+              className="nav-link hover:underline"
+            >
               Blog
-            </Link>
-            <Link href="/nft" className="nav-link hover:underline">
-              Custom NFTs
             </Link>
             <Link href="/image-gen" className="nav-link hover:underline">
               AI Images

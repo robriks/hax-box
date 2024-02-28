@@ -40,6 +40,8 @@ export default function NFT() {
             <a href="https://horn.technology" className="text-blue-500">
               {" "}
               horn.technology
+              {" & "}
+              hax.box
             </a>
           </p>
         </div>
@@ -52,6 +54,22 @@ export default function NFT() {
                 Projects
               </h1>
               <div className="grid grid-cols-2 sm:grid-cols-3 items-center gap-2 mb-3">
+                <Link
+                  href="https://github.com/robriks/nouns-prop-lot"
+                  legacyBehavior
+                >
+                  <div className="flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl">
+                    <div>
+                      <p className="text-lg text-center font-bold">⌐◨-◨</p>
+                      <p className="text-base text-center font-bold mb-2">
+                        Nouns PropLot Protocol
+                      </p>
+                      <p className="ml-1 text-[11px] leading-snug hover:underline">
+                        A permissionless protocol extending Nouns governance
+                      </p>
+                    </div>
+                  </div>
+                </Link>
                 <Link href="/chatbot" legacyBehavior>
                   <div className="flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl">
                     <div>
@@ -82,20 +100,6 @@ export default function NFT() {
                     </div>
                   </div>
                 </Link>
-                <Link href="/nft" legacyBehavior>
-                  <div className="flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl">
-                    <div>
-                      <p className="text-lg text-center font-bold">🦄 🐒</p>
-                      <p className="text-base text-center font-bold mb-2">
-                        NFT Generator
-                      </p>
-                      <p className="ml-1 text-[11px] leading-snug hover:underline">
-                        A tool to turn your pictures, videos, or audio into
-                        NFTs!
-                      </p>
-                    </div>
-                  </div>
-                </Link>
                 <Link href="https://huskycoin.vercel.app" legacyBehavior>
                   <div className="flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl">
                     <div>
@@ -113,7 +117,8 @@ export default function NFT() {
                 </Link>
                 <Link
                   href="https://mirror.xyz/0x65b54a4646369d8ad83cb58a5a6b39f22fcd8cee"
-                  legacyBehavior>
+                  legacyBehavior
+                >
                   <div className="flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl">
                     <div>
                       <p className="text-lg text-center font-bold">⛓️ 📝</p>
@@ -127,7 +132,10 @@ export default function NFT() {
                     </div>
                   </div>
                 </Link>
-                <Link href="https://github.com/robriks/ethernaut-solutions" legacyBehavior>
+                <Link
+                  href="https://github.com/robriks/ethernaut-solutions"
+                  legacyBehavior
+                >
                   <div className="flex items-center h-48 rounded-3xl border-2 border-indigo-300 p-2 cursor-pointer shadow-2xl">
                     <div>
                       <p className="text-lg text-center font-bold">🧑🏻‍💻</p>
@@ -149,8 +157,11 @@ export default function NFT() {
       <div className="flex justify-center">
         <div className="backdrop-blur-xs rounded-3xl mt-8 mx-4 sm:mx-4 sm:my-4 shadow-xl">
           <p className="p-6 text-sm font-bold lg:text-lg sm:place-self-center sm:ml-2 md:text-md">
-            Need a Solidity/JS developer? Looking to integrate a Web3 token/NFT
-            with your business?
+            <a className="text-[16px] sm:text-sm lg:text-xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
+              Are you looking for&nbsp;
+            </a>
+            a protocol security audit or EVM smart contract/Solidity & JS
+            developer?
           </p>
           <p className="px-6 pb-6 text-sm lg:text-lg sm:place-self-center sm:ml-2 md:text-md">
             Contact me with inquiries!
