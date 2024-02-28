@@ -93,12 +93,12 @@ export default function Home() {
             <Link href="/chatbot" className="text-blue-500 hover:underline">
               an Artificial Intelligence using my AI chatapp!
             </Link>
-            &nbsp;I'm an open-source autodidact as you can see from
+            &nbsp;I&apos;m an open-source autodidact as you can see from
             <Link
               href="https://github.com/robriks/nouns-prop-lot"
               className="text-blue-500 hover:underline"
             >
-              &nbsp;my GitHub where you'll find my projects like an onchain
+              &nbsp;my GitHub where you&apos;ll find my projects like an onchain
               protocol extending Nouns governance called PropLot
             </Link>
           </p>
