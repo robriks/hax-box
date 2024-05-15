@@ -13,6 +13,9 @@ const Chatbot = () => {
   const [active, setActive] = useState("");
   const [conversation, setConversation] = useState([]);
   const [history, setHistory] = useState([]);
+  const [file, setFile] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
+
   // state variable used to toggle Kerrigan KweenBirb's hooting
   const [toggleKerrigan, setToggleKerrigan] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -21,7 +24,14 @@ const Chatbot = () => {
 
   useEffect(() => {
     setMounted(true);
-  }, [toggleKerrigan]);
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImageUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  }, [toggleKerrigan, file]);
 
   const onSubmit = async (data, e) => {
     const _prompt = ref.current.value;
@@ -31,9 +41,22 @@ const Chatbot = () => {
     // set loading state to true to initialize
     setLoading(true);
 
-    // prepend conversation context
-    const current = { role: "user", content: _prompt };
+    const current = {
+      role: "user",
+      content: [{ type: "text", text: _prompt }],
+    };
+    // prepend conversation context to provide full chat history
     const messages = [...conversation, current];
+
+    // @note If detected, add base64 encoding of uploaded image (not an https URL)
+    if (imageUrl) {
+      current.content.push({
+        type: "image_url",
+        image_url: {
+          url: imageUrl,
+        },
+      });
+    }
 
     // conditionally include system message via array.unshift() based on toggle state
     if (toggleKerrigan) {
@@ -207,58 +230,83 @@ const Chatbot = () => {
               </label>
             </div>
           </div>
-          <div className="flex place-content-center justify-center w-full">
+          <div className="flex flex-col place-content-center justify-center w-full">
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="flex place-self-center mt-2 rounded-full"
+              className="flex flex-col place-self-center mt-2 rounded-full"
               id="chat"
             >
-              <textarea
-                {...register("prompt")}
-                ref={ref}
-                onInput={resizeTextarea}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
-                    e.preventDefault();
-                    handleSubmit((data) => onSubmit(data, e))();
-                  }
-                }}
-                type="text"
-                rows={1}
-                placeholder="Message GPT-4 AI!"
-                name="prompt"
-                className="flex resize overflow-hidden place-self-center px-5 mb-4 rounded-2xl bg-violet-100 dark:bg-indigo-300 dark:hover:bg-indigo-400 dark:focus:bg-indigo-400 dark:border-indigo-100 border-4 border-violet-400 hover:bg-violet-200 focus:bg-violet-200 focus:outline-none focus:border-4 focus:border-violet-500 focus:animate-pulse text-black shadow-xl"
-                id="chat-input"
-              />
-              <button
-                className="xs:flex-none place-self-center ml-3 min-w-max rounded-full drop-shadow-xl cursor-pointer hover:scale-125 ease-in duration-150 focus:outline-none drop-shadow-xl"
-                type="submit"
-                id="chat-button"
-                onClick={handleSubmit(onSubmit)}
-              >
-                {mounted && theme === "light" && (
-                  <div>
-                    <Image
-                      src={kweenbirb}
-                      alt="gif of KweenBirb saying gm"
-                      height="64"
-                      width="64"
-                      className="xs:flex-none rounded-full"
-                    />
-                  </div>
-                )}
-                {mounted && theme === "dark" && (
-                  <div>
-                    <Image
-                      src={kweenbirbDark}
-                      alt="gif of KweenBirb saying gm"
-                      height="64"
-                      width="64"
-                      className="xs:flex-none rounded-full"
-                    />
-                  </div>
-                )}
-              </button>
+              <div className="flex place-self-center">
+                <textarea
+                  {...register("prompt")}
+                  ref={ref}
+                  onInput={resizeTextarea}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                      e.preventDefault();
+                      handleSubmit((data) => onSubmit(data, e))();
+                    }
+                  }}
+                  type="text"
+                  rows={1}
+                  placeholder="Send GPT-4o AI a message!"
+                  name="prompt"
+                  className="flex resize overflow-hidden place-self-center px-8 rounded-2xl bg-violet-100 dark:bg-indigo-300 dark:hover:bg-indigo-400 dark:focus:bg-indigo-400 dark:border-indigo-100 border-4 border-violet-400 hover:bg-violet-200 focus:bg-violet-200 focus:outline-none focus:border-4 focus:border-violet-500 focus:animate-pulse text-black shadow-xl"
+                  id="chat-input"
+                />
+                <button
+                  className="xs:flex-none place-self-center ml-3 min-w-max rounded-full drop-shadow-xl cursor-pointer hover:scale-125 ease-in duration-150 focus:outline-none drop-shadow-xl"
+                  type="submit"
+                  id="chat-button"
+                  onClick={handleSubmit(onSubmit)}
+                >
+                  {mounted && theme === "light" && (
+                    <div>
+                      <Image
+                        src={kweenbirb}
+                        alt="gif of KweenBirb saying gm"
+                        height="80"
+                        width="80"
+                        className="xs:flex-none rounded-full"
+                      />
+                    </div>
+                  )}
+                  {mounted && theme === "dark" && (
+                    <div>
+                      <Image
+                        src={kweenbirbDark}
+                        alt="darkmode KweenBirb"
+                        height="80"
+                        width="80"
+                        className="xs:flex-none rounded-full"
+                      />
+                    </div>
+                  )}
+                </button>
+              </div>
+              <div className="flex flex-col items-center mt-4">
+                <p className="mb-3 text-center text-xs text-gray-600 dark:text-gray-200">
+                  Upload an image to accompany your message! GPT-4o will look at
+                  the image and respond with relevant information.
+                </p>
+                <input
+                  className="mb-4 form-control block px-2 py-1 shadow-xl text-xs font-normal text-gray-500 bg-white bg-clip-padding border border-solid border-4 border-violet-200 rounded-2xl transition focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none hover:border-violet-400"
+                  type="file"
+                  name="upload"
+                  accept="image/png, image/jpeg"
+                  onChange={(e) => setFile(e.target.files[0])}
+                />
+              </div>
+              {imageUrl && (
+                <div className="my-4 flex justify-center">
+                  <Image
+                    width={250}
+                    height={250}
+                    alt="Uploaded Image"
+                    src={imageUrl}
+                  />
+                </div>
+              )}
             </form>
           </div>
         </div>
