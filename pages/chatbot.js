@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { useTheme } from "next-themes";
+import imageCompression from "browser-image-compression";
 import styles from "../styles/Home.module.css";
 import Head from "next/head";
 import Image from "next/image";
@@ -109,6 +110,25 @@ const Chatbot = () => {
     if (element?.style) {
       ref.current.style.height = "auto";
       ref.current.style.height = `${e.target.scrollHeight}px`;
+    }
+  };
+
+  const handleFileCompression = async (file) => {
+    setFile(file);
+    try {
+      const compressedFile = await imageCompression(file, {
+        maxSizeMB: 1,
+        maxWidthOrHeight: 768,
+        useWebWorker: true,
+      });
+
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImageUrl(reader.result);
+      };
+      reader.readAsDataURL(compressedFile);
+    } catch (error) {
+      console.error("Error compressing the image:", error);
     }
   };
 
@@ -294,7 +314,7 @@ const Chatbot = () => {
                   type="file"
                   name="upload"
                   accept="image/png, image/jpeg"
-                  onChange={(e) => setFile(e.target.files[0])}
+                  onChange={(e) => handleFileCompression(e.target.files[0])}
                 />
               </div>
               {imageUrl && (
