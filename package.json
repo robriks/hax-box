@@ -13,6 +13,7 @@
     "@wagmi/chains": "^0.1.1",
     "@walletconnect/ethereum-provider": "^2.10.5",
     "@walletconnect/web3-provider": "^1.8.0",
+    "browser-image-compression": "^2.0.2",
     "ethers": "^5.7.2",
     "gitmoji-cli": "^8.3.0",
     "ipfs-http-client": "^59.0.0",
