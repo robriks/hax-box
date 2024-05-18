@@ -2,11 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { useTheme } from "next-themes";
 import imageCompression from "browser-image-compression";
+import Modal from "react-modal";
 import styles from "../styles/Home.module.css";
 import Head from "next/head";
 import Image from "next/image";
 import kweenbirb from "../public/9535.gif";
 import kweenbirbDark from "../public/9535DM.png";
+
+Modal.setAppElement("#__next");
 
 const Chatbot = () => {
   const { register, handleSubmit } = useForm();
@@ -16,6 +19,7 @@ const Chatbot = () => {
   const [history, setHistory] = useState([]);
   const [file, setFile] = useState(null);
   const [imageUrl, setImageUrl] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   // state variable used to toggle Kerrigan KweenBirb's hooting
   const [toggleKerrigan, setToggleKerrigan] = useState(false);
@@ -130,6 +134,14 @@ const Chatbot = () => {
     } catch (error) {
       console.error("Error compressing the image:", error);
     }
+  };
+
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
+
+  const handleFileChange = (e) => {
+    handleFileCompression(e.target.files[0]);
+    closeModal();
   };
 
   return (
@@ -309,13 +321,13 @@ const Chatbot = () => {
                   Upload an image to accompany your message! GPT-4o will look at
                   the image and respond with relevant information.
                 </p>
-                <input
-                  className="mb-4 form-control block px-2 py-1 shadow-xl text-xs font-normal text-gray-500 bg-white bg-clip-padding border border-solid border-4 border-violet-200 rounded-2xl transition focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none hover:border-violet-400"
-                  type="file"
-                  name="upload"
-                  accept="image/png, image/jpeg"
-                  onChange={(e) => handleFileCompression(e.target.files[0])}
-                />
+                <button
+                  type="button"
+                  onClick={openModal}
+                  className="mb-4 form-control block px-4 py-2 shadow-xl text-xs font-normal text-gray-200 bg-violet-500 dark:bg-indigo-600 dark:hover:bg-indigo-500 dark:focus:bg-indigo-400 hover:bg-violet-700 focus:bg-violet-200 focus:outline-none focus:border-4 focus:border-violet-500 focus:animate-pulse bg-clip-padding rounded-2xl transition focus:text-gray-900 focus:bg-white focus:border-blue-600 focus:outline-none hover:border-violet-400"
+                >
+                  Upload Image
+                </button>
               </div>
               {imageUrl && (
                 <div className="my-4 flex justify-center">
@@ -331,6 +343,37 @@ const Chatbot = () => {
           </div>
         </div>
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="File Upload Modal"
+        className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-indigo-200 p-8 rounded-lg shadow-xl max-w-md w-full z-50"
+        overlayClassName="fixed inset-0 bg-black bg-opacity-50 z-40"
+      >
+        <div className="flex justify-between items-center mb-4">
+          <button
+            onClick={closeModal}
+            className="text-xl text-gray-900 font-bold cursor-pointer ml-auto"
+          >
+            &times;
+          </button>
+        </div>
+        <div className="flex flex-col gap-4 text-2xl text-violet-500 text-center font-bold">
+          Select an image
+          <input
+            type="file"
+            accept="image/png, image/jpeg"
+            onChange={handleFileChange}
+            className="mb-4 form control block px-2 py-1 shadow-xl text-xs font-normal text-gray-500 bg-white bg-clip-padding border border-solid border-4 border-violet-200 rounded-2xl transition focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none hover:border-violet-400"
+          />
+          <button
+            onClick={closeModal}
+            className="px-4 py-2 bg-indigo-500 text-white rounded-full shadow-xl hover:bg-indigo-700"
+          >
+            Close
+          </button>
+        </div>
+      </Modal>
     </div>
   );
 };
