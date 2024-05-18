@@ -271,7 +271,7 @@ const Chatbot = () => {
                   rows={1}
                   placeholder="Send GPT-4o AI a message!"
                   name="prompt"
-                  className="flex resize overflow-hidden place-self-center px-8 rounded-2xl bg-violet-100 dark:bg-indigo-300 dark:hover:bg-indigo-400 dark:focus:bg-indigo-400 dark:border-indigo-100 border-4 border-violet-400 hover:bg-violet-200 focus:bg-violet-200 focus:outline-none focus:border-4 focus:border-violet-500 focus:animate-pulse text-black shadow-xl"
+                  className="flex resize overflow-hidden place-self-center px-5 rounded-2xl bg-violet-100 dark:bg-indigo-300 dark:hover:bg-indigo-400 dark:focus:bg-indigo-400 dark:border-indigo-100 border-4 border-violet-400 hover:bg-violet-200 focus:bg-violet-200 focus:outline-none focus:border-4 focus:border-violet-500 focus:animate-pulse text-black shadow-xl"
                   id="chat-input"
                 />
                 <button
@@ -285,8 +285,8 @@ const Chatbot = () => {
                       <Image
                         src={kweenbirb}
                         alt="gif of KweenBirb saying gm"
-                        height="80"
-                        width="80"
+                        height="70"
+                        width="70"
                         className="xs:flex-none rounded-full"
                       />
                     </div>
@@ -296,8 +296,8 @@ const Chatbot = () => {
                       <Image
                         src={kweenbirbDark}
                         alt="darkmode KweenBirb"
-                        height="80"
-                        width="80"
+                        height="70"
+                        width="70"
                         className="xs:flex-none rounded-full"
                       />
                     </div>
