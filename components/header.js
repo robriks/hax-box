@@ -15,6 +15,7 @@ export default function Header() {
                   src={BirbBanner}
                   className="rounded-full"
                   alt="KweenBirb header banner"
+                  priority={true}
                 ></Image>
               </Link>
             </div>
