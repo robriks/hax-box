@@ -8,7 +8,7 @@ export default function Footer() {
     <div className="justify-center h-auto w-auto">
       <div className="justify-center text-xs">
         <h2 className="text-center mb-2">
-          Copyright © 2024 Osterlund Dapp Solutions
+          Copyright © 2024 Solidity Solutions by Osterity LLC
         </h2>
         <h2 className="text-center font-bold">Contact:</h2>
       </div>
