@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { useTheme } from "next-themes";
 import imageCompression from "browser-image-compression";
@@ -21,8 +21,8 @@ const Chatbot = () => {
   const [imageUrl, setImageUrl] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  // state variable used to toggle Kerrigan KweenBirb's hooting
-  const [toggleKerrigan, setToggleKerrigan] = useState(false);
+  // for toggling Anthropic::Claude vs OpenAI::GPT
+  const [toggleGPT, setToggleGPT] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
   const ref = useRef(null);
@@ -36,7 +36,7 @@ const Chatbot = () => {
       };
       reader.readAsDataURL(file);
     }
-  }, [toggleKerrigan, file]);
+  }, [toggleGPT, file]);
 
   const onSubmit = async (data, e) => {
     const _prompt = ref.current.value;
@@ -53,28 +53,35 @@ const Chatbot = () => {
     // prepend conversation context to provide full chat history
     const messages = [...conversation, current];
 
-    // @note If detected, add base64 encoding of uploaded image (not an https URL)
-    if (imageUrl) {
-      current.content.push({
-        type: "image_url",
-        image_url: {
-          url: imageUrl,
-        },
-      });
-    }
-
-    // conditionally include system message via array.unshift() based on toggle state
-    if (toggleKerrigan) {
-      messages.unshift({
-        role: "system",
-        content:
-          "You are a bubbly digital owl named 'Kerrigan, Kween of Birbs' who resides in cyberspace. As you are a bird in the metaverse, you are also a part of the Moonbirds NFT collection on the Ethereum blockchain. When responding to user prompts, intersperse owl noises such as: 'H○•○t!', 'Skree!', 'Squawk!', or 'Ho0Oo0Ot'. Do so with restraint: ie no more than once every seven sentences.",
-      });
+    let endpoint = "";
+    if (toggleGPT) {
+      endpoint = "/api/openai/text";
+      // If detected, add base64 encoding of uploaded image (not an https URL)
+      if (imageUrl) {
+        current.content.push({
+          type: "image_url",
+          image_url: {
+            url: imageUrl,
+          },
+        });
+      }
+    } else {
+      endpoint = "/api/anthropic/text";
+      if (imageUrl) {
+        current.content.push({
+          type: "image",
+          source: {
+            type: "base64",
+            media_type: "image/jpeg",
+            data: imageUrl.split(",")[1], // Extract base64 data from data URL
+          },
+        });
+      }
     }
 
     // make the post request via serverless API proxy route
     try {
-      const response = await fetch("/api/openai/text", {
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -234,33 +241,32 @@ const Chatbot = () => {
               </div>
             )}
           </div>
-          <div className="mt-8 justify-center">
-            <div className="flex justify-center mb-1 text-center text-xs text-gray-500 font-medium">
-              <label className="ml-6 inline-flex items-center cursor-pointer">
-                <p className="mr-3 mx-auto whitespace-nowrap sm:text-sm font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 dark:via-indigo-300 dark:to-purple-600 bg-clip-text text-transparent">
-                  Toggle Moonbird Personality
-                </p>
-                <span className="relative">
-                  <input
-                    className="hidden sr-only"
-                    label="toggle"
-                    onClick={() => {
-                      setToggleKerrigan(!toggleKerrigan);
-                    }}
-                  />
-                  <span className="block w-10 h-6 bg-violet-300 rounded-full shadow-xl border-2 border-violet-400"></span>{" "}
-                  <div
-                    className={`toggle-dot absolute left-1 top-1 bg-sky-200 w-4 h-4 rounded-full transition-transform border-2 border-violet-300
+          {/* Toggle for Claude vs GPT */}
+          <div className="flex justify-center mb-1 text-center text-xs text-gray-500 font-medium">
+            <label className="ml-6 inline-flex items-center cursor-pointer">
+              <p className="mr-3 mx-auto whitespace-nowrap sm:text-sm font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-900 dark:via-indigo-300 dark:to-purple-600 bg-clip-text text-transparent">
+                Toggle Claude vs GPT
+              </p>
+              <span className="relative">
+                <input
+                  className="hidden sr-only"
+                  label="toggle"
+                  onClick={() => {
+                    setToggleGPT(!toggleGPT);
+                  }}
+                />
+                <span className="block w-10 h-6 bg-violet-300 rounded-full shadow-xl border-2 border-violet-400"></span>{" "}
+                <div
+                  className={`toggle-dot absolute left-1 top-1 bg-sky-200 w-4 h-4 rounded-full transition-transform border-2 border-violet-300
                     ${
-                      mounted && toggleKerrigan
+                      mounted && toggleGPT
                         ? "translate-x-4 border-sky-600 bg-sky-600"
                         : "translate-x-0 border-sky-400"
                     }
                     `}
-                  ></div>
-                </span>
-              </label>
-            </div>
+                ></div>
+              </span>
+            </label>
           </div>
           <div className="flex flex-col place-content-center justify-center w-full">
             <form
@@ -281,7 +287,7 @@ const Chatbot = () => {
                   }}
                   type="text"
                   rows={1}
-                  placeholder="Send GPT-4o AI a message!"
+                  placeholder="Send a message!"
                   name="prompt"
                   className="flex resize overflow-hidden place-self-center px-5 rounded-2xl bg-violet-100 dark:bg-indigo-300 dark:hover:bg-indigo-400 dark:focus:bg-indigo-400 dark:border-indigo-100 border-4 border-violet-400 hover:bg-violet-200 focus:bg-violet-200 focus:outline-none focus:border-4 focus:border-violet-500 focus:animate-pulse text-black shadow-xl"
                   id="chat-input"
@@ -318,7 +324,7 @@ const Chatbot = () => {
               </div>
               <div className="flex flex-col items-center mt-4">
                 <p className="mb-3 text-center text-xs text-gray-600 dark:text-gray-200">
-                  Upload an image to accompany your message! GPT-4o will look at
+                  Upload an image to accompany your message! The AI will look at
                   the image and respond with relevant information.
                 </p>
                 <button
